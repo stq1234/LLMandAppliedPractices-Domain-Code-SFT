@@ -1,0 +1,12 @@
+﻿aggregation,repo,n_repositories,n_files,base_pass_count,base_pass_rate_pct,sft_pass_count,sft_pass_rate_pct,delta_pp
+repository,curator,1,16,2,12.5,10,62.5,50.0
+repository,eventmesh,1,29,4,13.79,25,86.21,72.41
+repository,geoapi,1,3,0,0.0,1,33.33,33.33
+repository,httpcomponents-client,1,27,5,18.52,18,66.67,48.15
+repository,leshan,1,10,1,10.0,9,90.0,80.0
+repository,mapfish-print,1,28,5,17.86,21,75.0,57.14
+repository,opentcs,1,102,25,24.51,84,82.35,57.84
+repository,tinfour,1,1,0,0.0,0,0.0,0.0
+repository,yudao-cloud,1,4,0,0.0,1,25.0,25.0
+file_micro,All files,9,220,42,19.09,169,76.82,57.73
+repository_macro,Equal-weight mean of repositories,9,220,,10.8,,57.9,47.1

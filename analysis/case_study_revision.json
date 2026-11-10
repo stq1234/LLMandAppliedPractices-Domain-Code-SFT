@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "paired_runs": [
+    "20261109-123917-aixcoder-v2",
+    "20261109-124514-sft-offline"
+  ],
+  "note": "每个测试/构建命令结果只作样本日志证据；command_record_count 不是 JUnit 方法数。",
+  "cases": [
+    {
+      "id": "difficulty3_b1a5f27af4b7f4d0",
+      "section": "正文短对照",
+      "title": "Couple：哈希函数的 long/int 类型转换",
+      "domain": "智慧物流",
+      "repo": "opentcs",
+      "repo_tag": "openTCS/opentcs",
+      "target_path": "opentcs-api-base/src/main/java/org/opentcs/data/model/Couple.java",
+      "base_status": "failed",
+      "sft_status": "passed",
+      "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+      "requirement_excerpt": "这里的异或运算在 `long` 值上执行，随后通过显式转换保留低 32 位并按 Java `int` 规则解释。",
+      "input_skeleton_excerpt": "package org.opentcs.data.model;\n\nimport java.io.Serializable;\n\npublic class Couple implements Serializable {\n  private final long x;\n  private final long y;\n  public Couple(long x, long y);\n  public long getX();\n  public long getY();\n  @Override public boolean equals(Object obj);\n  @Override public int hashCode();\n  @Override public String toString();\n}",
+      "ground_truth_key_semantics": "`x` 与 `y` 是 long；异或仍是 long，返回 int 前必须按参考实现显式窄化转换。其他对象契约保持不变。",
+      "ground_truth_excerpt": "public int hashCode() {\n    return (int) (x ^ y);\n  }",
+      "base_output_excerpt": "@Override public int hashCode() {\n    return x ^ y;\n  }",
+      "sft_output_excerpt": "public int hashCode() {\n    return (int) (x ^ y);\n  }",
+      "sft_raw_prediction": null,
+      "command_records": {
+        "base": {
+          "command_record_count": 1,
+          "successful_command_records": 0,
+          "failed_command_records": 1,
+          "failing_command_samples": [
+            {
+              "test_command": "org.opentcs.data.model.ModelSerializationTest.shouldSerializeAndDeserializeEnvironmentalEntity",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "error: incompatible types: possible lossy conversion from long to int"
+            }
+          ]
+        },
+        "sft_offline": {
+          "command_record_count": 1,
+          "successful_command_records": 1,
+          "failed_command_records": 0,
+          "failing_command_samples": []
+        }
+      },
+      "base_failure_evidence": "error: incompatible types: possible lossy conversion from long to int",
+      "sft_failure_evidence": "",
+      "log_interpretation": "基础组的直接编译诊断是 long 到 int 可能发生有损转换；SFT 输出增加显式 int 转换，同一关联命令成功。",
+      "excerpt_policy": "源码节选；未加入原样本不存在的代码，展示范围外部分省略。"
+    },
+    {
+      "id": "difficulty3_32c0a2af7ec1083b",
+      "section": "正文短对照",
+      "title": "DistributedBarrier：有限等待的时间单位",
+      "domain": "企业信息化",
+      "repo": "curator",
+      "repo_tag": "apache/curator",
+      "target_path": "curator-recipes/src/main/java/org/apache/curator/framework/recipes/barriers/DistributedBarrier.java",
+      "base_status": "passed",
+      "sft_status": "failed",
+      "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+      "requirement_excerpt": "若 `unit` 非空，则通过 `TimeUnit.MILLISECONDS.convert(maxWait, unit)` 将 `maxWait` 转换为毫秒；若 `unit` 为空，则把最大等待毫秒数视为 `Long.MAX_VALUE`，但同时通过独立的 `hasMaxWait` 标志选择无限期的 `wait()` 分支，因此不会把空单位当作一个普通的有限超时单位。",
+      "input_skeleton_excerpt": "package org.apache.curator.framework.recipes.barriers;\n\nimport java.util.concurrent.TimeUnit;\nimport org.apache.curator.framework.CuratorFramework;\nimport org.apache.curator.utils.PathUtils;\nimport org.apache.zookeeper.KeeperException;\nimport org.apache.zookeeper.WatchedEvent;\nimport org.apache.zookeeper.Watcher;\n\npublic class DistributedBarrier {\n  private final CuratorFramework client;\n  private final String barrierPath;\n  private final Watcher watcher;\n  public DistributedBarrier(CuratorFramework client, String barrierPath);\n  public synchronized void setBarrier() throws Exception;\n  public synchronized void removeBarrier() throws Exception;\n  public synchronized void waitOnBarrier() throws Exception;\n  public synchronized boolean waitOnBarrier(long maxWait, TimeUnit unit) throws Exception;\n}",
+      "ground_truth_key_semantics": "`maxWait` 的值以 `unit` 为单位；有限等待需把其转换为毫秒，超时后返回 false，节点消失则返回 true。",
+      "ground_truth_excerpt": "public synchronized boolean waitOnBarrier(long maxWait, TimeUnit unit) throws Exception {\n        long startMs = System.currentTimeMillis();\n        boolean hasMaxWait = (unit != null);\n        long maxWaitMs = hasMaxWait ? TimeUnit.MILLISECONDS.convert(maxWait, unit) : Long.MAX_VALUE;\n\n        boolean result;\n        for (; ; ) {\n            result = (client.checkExists().usingWatcher(watcher).forPath(barrierPath) == null);\n            if (result) {\n                break;\n            }\n\n            if (hasMaxWait) {\n                long elapsed = System.currentTimeMillis() - startMs;\n                long thisWaitMs = maxWaitMs - elapsed;\n                if (thisWaitMs <= 0) {\n                    break;\n                }\n                wait(thisWaitMs);\n            } else {\n                wait();\n            }\n        }\n        return result;\n    }",
+      "base_output_excerpt": "public synchronized boolean waitOnBarrier(long maxWait, TimeUnit unit) throws Exception {\n    long startMs = System.currentTimeMillis();\n    while (client.checkExists().usingWatcher(watcher).forPath(barrierPath) != null) {\n      if ((unit != null) && (System.currentTimeMillis() - startMs >= TimeUnit.MILLISECONDS.convert(maxWait, unit))) {\n        return false;\n      }\n      wait(unit != null ? Math.min(TimeUnit.MILLISECONDS.convert(maxWait, unit) - (System.currentTimeMillis() - startMs), TimeUnit.MILLISECONDS.convert(1, TimeUnit.MILLISECONDS)) : 0);\n    }\n    return true;\n  }",
+      "sft_output_excerpt": "public synchronized boolean waitOnBarrier(long maxWait, TimeUnit unit) throws Exception {\n        long start = System.currentTimeMillis();\n        boolean hasMaxWait = unit != null;\n        while (client.checkExists().usingWatcher(watcher).forPath(barrierPath) != null) {\n            if (hasMaxWait) {\n                long thisWaitMs = unit.convert(maxWait, TimeUnit.MILLISECONDS) - (System.currentTimeMillis() - start);\n                if (thisWaitMs <= 0) {\n                    return false;\n                }\n                wait(thisWaitMs);\n            } else {\n                wait();\n            }\n        }\n        return true;\n    }",
+      "sft_raw_prediction": null,
+      "command_records": {
+        "base": {
+          "command_record_count": 4,
+          "successful_command_records": 4,
+          "failed_command_records": 0,
+          "failing_command_samples": []
+        },
+        "sft_offline": {
+          "command_record_count": 4,
+          "successful_command_records": 2,
+          "failed_command_records": 2,
+          "failing_command_samples": [
+            {
+              "test_command": "org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testBasic",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>"
+            },
+            {
+              "test_command": "org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testServerCrash",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "org.opentest4j.AssertionFailedError:"
+            }
+          ]
+        }
+      },
+      "base_failure_evidence": "",
+      "sft_failure_evidence": "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+      "log_interpretation": "基础组四条关联测试/构建命令均成功。SFT 输出将换算方向颠倒；四条命令中两条因屏障等待测试断言失败，样本由 passed 转为 failed。",
+      "excerpt_policy": "源码节选；未加入原样本不存在的代码，展示范围外部分省略。"
+    },
+    {
+      "id": "difficulty3_da4c4059487492ac",
+      "section": "正文短对照",
+      "title": "BoundingBoxProtrusionCheck：四向偏移与顶部高度差",
+      "domain": "智慧物流",
+      "repo": "opentcs",
+      "repo_tag": "openTCS/opentcs",
+      "target_path": "opentcs-strategies-default/src/main/java/org/opentcs/strategies/basic/routing/edgeevaluator/BoundingBoxProtrusionCheck.java",
+      "base_status": "failed",
+      "sft_status": "passed",
+      "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+      "requirement_excerpt": "文件职责 目标文件位于 `org.opentcs.strategies.basic.routing.edgeevaluator` 包，职责是比较一个内层 `BoundingBox` 与一个外层 `BoundingBox` 的空间范围，计算内层包围盒在前、后、左、右和顶部相对于外层包围盒超出的尺寸，并返回一个用于查询各方向超出情况的结果对象。",
+      "input_skeleton_excerpt": "package org.opentcs.strategies.basic.routing.edgeevaluator;\n\nimport org.opentcs.data.model.BoundingBox;\n\npublic class BoundingBoxProtrusionCheck {\n  public BoundingBoxProtrusionCheck();\n  public BoundingBoxProtrusion checkProtrusion(BoundingBox inner, BoundingBox outer);\n  public static class BoundingBoxProtrusion {\n    private final double front;\n    private final double back;\n    private final double left;\n    private final double right;\n    private final double top;\n    public BoundingBoxProtrusion(double front, double back, double left, double right, double top);\n    public boolean protrudesFront();\n    public boolean protrudesBack();\n    public boolean protrudesLeft();\n    public boolean protrudesRight();\n    public boolean protrudesTop();\n    public boolean protrudesAnywhere();\n  }\n}",
+      "ground_truth_key_semantics": "前、后、左、右差值都按“内盒边界减外盒对应边界”计算；仅正差表示越界，返回对象把非正值规范为零。顶部比较内盒与外盒高度。",
+      "ground_truth_excerpt": "public BoundingBoxProtrusion checkProtrusion(BoundingBox inner, BoundingBox outer) {\n    return new BoundingBoxProtrusion(\n        (inner.getLength() / 2.0 - inner.getReferenceOffset().getX()) -\n            (outer.getLength() / 2.0 - outer.getReferenceOffset().getX()),\n        (inner.getLength() / 2.0 + inner.getReferenceOffset().getX()) -\n            (outer.getLength() / 2.0 + outer.getReferenceOffset().getX()),\n        (inner.getWidth() / 2.0 - inner.getReferenceOffset().getY()) -\n            (outer.getWidth() / 2.0 - outer.getReferenceOffset().getY()),\n        (inner.getWidth() / 2.0 + inner.getReferenceOffset().getY()) -\n            (outer.getWidth() / 2.0 + outer.getReferenceOffset().getY()),\n        inner.getHeight() - outer.getHeight()\n    );\n  }",
+      "base_output_excerpt": "public BoundingBoxProtrusion checkProtrusion(BoundingBox inner, BoundingBox outer) {\n    return new BoundingBoxProtrusion(\n        Math.max(0, inner.getLength() / 2.0 - inner.getReferenceOffset().getX()\n            - outer.getLength() / 2.0 + outer.getReferenceOffset().getX()),\n        Math.max(0, outer.getLength() / 2.0 + outer.getReferenceOffset().getX()\n            - inner.getLength() / 2.0 + inner.getReferenceOffset().getX()),\n        Math.max(0, inner.getWidth() / 2.0 - inner.getReferenceOffset().getY()\n            - outer.getWidth() / 2.0 + outer.getReferenceOffset().getY()),\n        Math.max(0, outer.getWidth() / 2.0 + outer.getReferenceOffset().getY()\n            - inner.getWidth() / 2.0 + inner.getReferenceOffset().getY()),\n        Math.max(0, inner.getHeight() - outer.getHeight()));\n  }",
+      "sft_output_excerpt": "public BoundingBoxProtrusion checkProtrusion(BoundingBox inner, BoundingBox outer) {\n    double front = Math.max(\n        0,\n        inner.getLength() / 2.0 - inner.getReferenceOffset().getX()\n            - (outer.getLength() / 2.0 - outer.getReferenceOffset().getX())\n    );\n    double back = Math.max(\n        0,\n        inner.getLength() / 2.0 + inner.getReferenceOffset().getX()\n            - (outer.getLength() / 2.0 + outer.getReferenceOffset().getX())\n    );\n    double left = Math.max(\n        0,\n        inner.getWidth() / 2.0 - inner.getReferenceOffset().getY()\n            - (outer.getWidth() / 2.0 - outer.getReferenceOffset().getY())\n    );\n    double right = Math.max(\n        0,\n        inner.getWidth() / 2.0 + inner.getReferenceOffset().getY()\n            - (outer.getWidth() / 2.0 + outer.getReferenceOffset().getY())\n    );\n    double top = inner.getHeight() - outer.getHeight();\n    return new BoundingBoxProtrusion(front, back, left, right, top);\n  }",
+      "sft_raw_prediction": null,
+      "command_records": {
+        "base": {
+          "command_record_count": 11,
+          "successful_command_records": 1,
+          "failed_command_records": 10,
+          "failing_command_samples": [
+            {
+              "test_command": "org.opentcs.strategies.basic.routing.edgeevaluator.BoundingBoxProtrusionCheckTest.detectProtrusionFromTheBack",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "org.opentest4j.AssertionFailedError at BoundingBoxProtrusionCheckTest.java"
+            },
+            {
+              "test_command": "org.opentcs.strategies.basic.routing.edgeevaluator.BoundingBoxProtrusionCheckTest.detectProtrusionFromTheFront",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "org.opentest4j.AssertionFailedError at BoundingBoxProtrusionCheckTest.java"
+            },
+            {
+              "test_command": "org.opentcs.strategies.basic.routing.edgeevaluator.BoundingBoxProtrusionCheckTest.detectProtrusionFromTheLeft",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "org.opentest4j.AssertionFailedError at BoundingBoxProtrusionCheckTest.java"
+            }
+          ]
+        },
+        "sft_offline": {
+          "command_record_count": 11,
+          "successful_command_records": 11,
+          "failed_command_records": 0,
+          "failing_command_samples": []
+        }
+      },
+      "base_failure_evidence": "org.opentest4j.AssertionFailedError at BoundingBoxProtrusionCheckTest.java",
+      "sft_failure_evidence": "",
+      "log_interpretation": "基础组 11 条关联命令记录中 10 条失败，多个方向的越界/贴边断言不符；SFT 组 11 条均成功。计数是命令记录，不是 JUnit 方法数。",
+      "excerpt_policy": "源码节选；未加入原样本不存在的代码，展示范围外部分省略。"
+    },
+    {
+      "id": "difficulty3_e979c610cca0755b",
+      "section": "附录",
+      "title": "Filters：空筛选条件应接受所有对象",
+      "domain": "智慧物流",
+      "repo": "opentcs",
+      "repo_tag": "openTCS/opentcs",
+      "target_path": "opentcs-kernel-extension-http-services/src/main/java/org/opentcs/kernel/extensions/servicewebapi/v1/Filters.java",
+      "base_status": "failed",
+      "sft_status": "passed",
+      "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+      "requirement_excerpt": "传入空筛选条件时表示不限制对应条件，返回的谓词接受所有输入对象；传入非空引用或状态时，则仅接受与该条件相等的对象。",
+      "input_skeleton_excerpt": "package org.opentcs.kernel.extensions.servicewebapi.v1;\n\nimport jakarta.annotation.Nullable;\nimport java.util.Objects;\nimport java.util.function.Predicate;\nimport org.opentcs.data.TCSObjectReference;\nimport org.opentcs.data.model.Vehicle;\nimport org.opentcs.data.order.OrderSequence;\nimport org.opentcs.data.order.TransportOrder;\nimport org.opentcs.data.peripherals.PeripheralJob;\n\npublic class Filters {\n  private Filters();\n  public static Predicate<TransportOrder> transportOrderWithIntendedVehicle(@Nullable TCSObjectReference<Vehicle> vehicleRef);\n  public static Predicate<OrderSequence> orderSequenceWithIntendedVehicle(@Nullable TCSObjectReference<Vehicle> vehicleRef);\n  public static Predicate<PeripheralJob> peripheralJobWithRelatedVehicle(@Nullable TCSObjectReference<Vehicle> vehicleRef);\n  public static Predicate<PeripheralJob> peripheralJobWithRelatedTransportOrder(@Nullable TCSObjectReference<TransportOrder> orderRef);\n  public static Predicate<Vehicle> vehicleWithProcState(@Nullable Vehicle.ProcState procState);\n}",
+      "ground_truth_key_semantics": "当 `vehicleRef` 为 null 时，该工厂返回恒为 true 的谓词；非空时才按订单的 intended vehicle 做相等比较。其他筛选工厂遵循相同空值语义。",
+      "ground_truth_excerpt": "public static Predicate<TransportOrder> transportOrderWithIntendedVehicle(\n      @Nullable\n      TCSObjectReference<Vehicle> vehicleRef\n  ) {\n    return vehicleRef == null\n        ? order -> true\n        : order -> Objects.equals(vehicleRef, order.getIntendedVehicle());\n  }",
+      "base_output_excerpt": "public static Predicate<TransportOrder> transportOrderWithIntendedVehicle(@Nullable TCSObjectReference<Vehicle> vehicleRef) {\n    return order -> Objects.equals(order.getIntendedVehicle(), vehicleRef);\n  }",
+      "sft_output_excerpt": "public static Predicate<TransportOrder> transportOrderWithIntendedVehicle(\n      @Nullable\n      TCSObjectReference<Vehicle> vehicleRef\n  ) {\n    return vehicleRef == null\n        ? order -> true\n        : order -> Objects.equals(vehicleRef, order.getIntendedVehicle());\n  }",
+      "sft_raw_prediction": null,
+      "command_records": {
+        "base": {
+          "command_record_count": 10,
+          "successful_command_records": 3,
+          "failed_command_records": 7,
+          "failing_command_samples": [
+            {
+              "test_command": "org.opentcs.kernel.extensions.servicewebapi.v1.FiltersTest.acceptOrderSequenceWithGivenIntendedVehicle",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "java.lang.AssertionError at FiltersTest.java"
+            },
+            {
+              "test_command": "org.opentcs.kernel.extensions.servicewebapi.v1.FiltersTest.acceptOrderSequencesRegardlessOfIntendedVehicle",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "java.lang.AssertionError at FiltersTest.java"
+            },
+            {
+              "test_command": "org.opentcs.kernel.extensions.servicewebapi.v1.FiltersTest.acceptPeripheralJobsRegardlessOfRelatedTransportOrder",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "java.lang.AssertionError at FiltersTest.java"
+            }
+          ]
+        },
+        "sft_offline": {
+          "command_record_count": 10,
+          "successful_command_records": 10,
+          "failed_command_records": 0,
+          "failing_command_samples": []
+        }
+      },
+      "base_failure_evidence": "java.lang.AssertionError at FiltersTest.java",
+      "sft_failure_evidence": "",
+      "log_interpretation": "基础组 10 条关联命令记录中 7 条失败，错误集中在“无需限制”的筛选场景；SFT 显式区分 null 与非 null 条件，10 条命令记录均成功。",
+      "excerpt_policy": "源码节选；未加入原样本不存在的代码，展示范围外部分省略。"
+    },
+    {
+      "id": "difficulty3_94accda3b6823d56",
+      "section": "附录",
+      "title": "PJsonObject：可选数值读取的缺失值语义",
+      "domain": "智慧城市",
+      "repo": "mapfish-print",
+      "repo_tag": "mapfish/mapfish-print",
+      "target_path": "core/src/main/java/org/mapfish/print/wrapper/json/PJsonObject.java",
+      "base_status": "failed",
+      "sft_status": "passed",
+      "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+      "requirement_excerpt": "整数方法会把 Integer.MIN_VALUE 或 Long.MIN_VALUE 的读取结果当成 null，即使底层数据实际就是对应极值。",
+      "input_skeleton_excerpt": "package org.mapfish.print.wrapper.json;\nimport java.util.Iterator;\nimport org.json.JSONArray;\nimport org.json.JSONObject;\nimport org.mapfish.print.wrapper.ObjectMissingException;\nimport org.mapfish.print.wrapper.PAbstractObject;\nimport org.mapfish.print.wrapper.PArray;\nimport org.mapfish.print.wrapper.PElement;\nimport org.mapfish.print.wrapper.PObject;\npublic class PJsonObject extends PAbstractObject {\n  @Override public final Integer optInt(final String key);\n  @Override public final Long optLong(final String key);\n  @Override public final Double optDouble(final String key);\n  @Override public final Float optFloat(final String key);\n  @Override public final Boolean optBool(final String key);",
+      "ground_truth_key_semantics": "可选数值读取把 JSONObject 使用的哨兵值转换为 Java null；optInt/optLong 用最小整数哨兵，optDouble 用 NaN。",
+      "ground_truth_excerpt": "public final Integer optInt(final String key) {\n    final int result = this.obj.optInt(key, Integer.MIN_VALUE);\n    return result == Integer.MIN_VALUE ? null : result;\n  }\n\npublic final Long optLong(final String key) {\n    final long result = this.obj.optLong(key, Long.MIN_VALUE);\n    return result == Long.MIN_VALUE ? null : result;\n  }\n\npublic final Double optDouble(final String key) {\n    double result = this.obj.optDouble(key, Double.NaN);\n    if (Double.isNaN(result)) {\n      return null;\n    }\n    return result;\n  }",
+      "base_output_excerpt": "@Override public final Integer optInt(final String key) {\n    return this.obj.optInt(key, Integer.MIN_VALUE);\n  }\n\n@Override public final Long optLong(final String key) {\n    return this.obj.optLong(key, Long.MIN_VALUE);\n  }\n\n@Override public final Double optDouble(final String key) {\n    return this.obj.optDouble(key, Double.NaN);\n  }",
+      "sft_output_excerpt": "public final Integer optInt(final String key) {\n    final int val = this.obj.optInt(key, Integer.MIN_VALUE);\n    return val == Integer.MIN_VALUE ? null : val;\n  }\n\npublic final Long optLong(final String key) {\n    final long val = this.obj.optLong(key, Long.MIN_VALUE);\n    return val == Long.MIN_VALUE ? null : val;\n  }\n\npublic final Double optDouble(final String key) {\n    final double val = this.obj.optDouble(key, Double.NaN);\n    return Double.isNaN(val) ? null : val;\n  }",
+      "sft_raw_prediction": null,
+      "command_records": {
+        "base": {
+          "command_record_count": 45,
+          "successful_command_records": 39,
+          "failed_command_records": 6,
+          "failing_command_samples": [
+            {
+              "test_command": "org.mapfish.print.attribute.StringArrayAttributeTest.testWrongType",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "java.lang.NullPointerException: Cannot invoke \"org.json.JSONArray.length()\" because \"this.array\" is null"
+            },
+            {
+              "test_command": "org.mapfish.print.attribute.map.MapAttributeTest.testMaxDpi",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NullPointerException>"
+            },
+            {
+              "test_command": "org.mapfish.print.output.ValuesTest.testDefaults",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "java.lang.NullPointerException: Cannot invoke \"org.json.JSONArray.length()\" because \"this.array\" is null"
+            }
+          ]
+        },
+        "sft_offline": {
+          "command_record_count": 45,
+          "successful_command_records": 45,
+          "failed_command_records": 0,
+          "failing_command_samples": []
+        }
+      },
+      "base_failure_evidence": "org.opentest4j.AssertionFailedError: Unexpected exception type thrown, expected: <java.lang.IllegalArgumentException> but was: <java.lang.NullPointerException>",
+      "sft_failure_evidence": "",
+      "log_interpretation": "基础组 45 条关联命令记录中 6 条非零退出，其中包括 MapAttributeTest 的异常类型断言；SFT 组 45 条均成功。输出差异符合样本需求规定的可选数值语义，但不据此声称单一方法解释全部 6 条失败。",
+      "excerpt_policy": "源码节选；未加入原样本不存在的代码，展示范围外部分省略。"
+    },
+    {
+      "id": "difficulty3_e07d7b33ce5e3c5e",
+      "section": "附录",
+      "title": "CacheableRequestPolicy：final 局部变量被再次赋值",
+      "domain": "企业信息化",
+      "repo": "httpcomponents-client",
+      "repo_tag": "apache/httpcomponents-client",
+      "target_path": "httpclient5-cache/src/main/java/org/apache/hc/client5/http/impl/cache/CacheableRequestPolicy.java",
+      "base_status": "passed",
+      "sft_status": "failed",
+      "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+      "requirement_excerpt": "该策略只允许 HTTP/1.1 请求，并且只允许 GET、HEAD 和 QUERY 方法；请求显式要求 `no-store` 或 `no-cache` 时，即使请求方法和协议版本满足条件，也不得使用缓存。",
+      "input_skeleton_excerpt": "package org.apache.hc.client5.http.impl.cache;\n\nimport org.apache.hc.client5.http.cache.RequestCacheControl;\nimport org.apache.hc.core5.http.HttpRequest;\nimport org.apache.hc.core5.http.HttpVersion;\nimport org.apache.hc.core5.http.Method;\nimport org.apache.hc.core5.http.ProtocolVersion;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nclass CacheableRequestPolicy {\n  private static final Logger LOG;\n  public boolean canBeServedFromCache(final RequestCacheControl cacheControl, final HttpRequest request);\n}",
+      "ground_truth_key_semantics": "请求版本为 null 时使用 HttpVersion.DEFAULT；协议版本、方法和缓存控制指令的检查顺序应保持不变。",
+      "ground_truth_excerpt": "public boolean canBeServedFromCache(final RequestCacheControl cacheControl, final HttpRequest request) {\n        final String method = request.getMethod();\n\n        final ProtocolVersion pv = request.getVersion() != null ? request.getVersion() : HttpVersion.DEFAULT;\n        if (HttpVersion.HTTP_1_1.compareToVersion(pv) != 0) {\n            LOG.debug(\"non-HTTP/1.1 request cannot be served from cache\");\n            return false;\n        }\n\n        if (!Method.GET.isSame(method) && !Method.HEAD.isSame(method) && !Method.QUERY.isSame(method)) {\n            if (LOG.isDebugEnabled()) {\n                LOG.debug(\"{} request cannot be served from cache\", method);\n            }\n            return false;\n        }\n\n        if (cacheControl.isNoStore()) {\n            LOG.debug(\"Request with no-store cannot be served from cache\");\n            return false;\n        }\n        if (cacheControl.isNoCache()) {\n            LOG.debug(\"Request with no-cache cannot be served from cache\");\n            return false;\n        }\n        LOG.debug(\"Request can be served from cache\");\n        return true;\n    }",
+      "base_output_excerpt": "public boolean canBeServedFromCache(final RequestCacheControl cacheControl, final HttpRequest request) {\n    final String method = request.getMethod();\n    final ProtocolVersion pv = request.getVersion() != null ? request.getVersion() : HttpVersion.DEFAULT;\n    if (HttpVersion.HTTP_1_1.compareToVersion(pv) != 0) {\n      if (LOG.isDebugEnabled()) {\n        LOG.debug(\"Non-HTTP/1.1 request cannot be served from cache: {}\", method);\n      }\n      return false;\n    }\n    if (!Method.GET.isSame(method) && !Method.HEAD.isSame(method) && !Method.QUERY.isSame(method)) {\n      if (LOG.isDebugEnabled()) {\n        LOG.debug(\"Method {} cannot be served from cache\", method);\n      }\n      return false;\n    }\n    if (cacheControl.isNoStore()) {\n      LOG.debug(\"Request contained a no-store directive\");\n      return false;\n    }\n    if (cacheControl.isNoCache()) {\n      LOG.debug(\"Request contained a no-cache directive\");\n      return false;\n    }\n    LOG.debug(\"Request can be served from cache\");\n    return true;\n  }",
+      "sft_output_excerpt": "public boolean canBeServedFromCache(final RequestCacheControl cacheControl, final HttpRequest request) {\n        final String method = request.getMethod();\n        final ProtocolVersion pv = request.getVersion();\n        if (pv == null) {\n            pv = HttpVersion.DEFAULT;\n        }\n        if (HttpVersion.HTTP_1_1.compareToVersion(pv) != 0) {\n            if (LOG.isDebugEnabled()) {\n                LOG.debug(\"Non-HTTP/1.1 request cannot be served from cache\");\n            }\n            return false;\n        }\n        if (!Method.GET.isSame(method) && !Method.HEAD.isSame(method) && !Method.QUERY.isSame(method)) {\n            if (LOG.isDebugEnabled()) {\n                LOG.debug(\"Method {} cannot be served from cache\", method);\n            }\n            return false;\n        }\n        if (cacheControl.isNoStore()) {\n            LOG.debug(\"Request with no-store directive cannot be served from cache\");\n            return false;\n        }\n        if (cacheControl.isNoCache()) {\n            LOG.debug(\"Request with no-cache directive cannot be served from cache\");\n            return false;\n        }\n        LOG.debug(\"Request can be served from cache\");\n        return true;\n    }",
+      "sft_raw_prediction": null,
+      "command_records": {
+        "base": {
+          "command_record_count": 3,
+          "successful_command_records": 3,
+          "failed_command_records": 0,
+          "failing_command_samples": []
+        },
+        "sft_offline": {
+          "command_record_count": 3,
+          "successful_command_records": 0,
+          "failed_command_records": 3,
+          "failing_command_samples": [
+            {
+              "test_command": "org.apache.hc.client5.http.impl.cache.TestCacheableRequestPolicy#testIsArbitraryMethodServableFromCache",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "error: cannot assign a value to final variable pv"
+            },
+            {
+              "test_command": "org.apache.hc.client5.http.impl.cache.TestCacheableRequestPolicy#testIsGetServableFromCache",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "error: cannot assign a value to final variable pv"
+            },
+            {
+              "test_command": "org.apache.hc.client5.http.impl.cache.TestCacheableRequestPolicy#testIsGetWithCacheControlServableFromCache",
+              "exit_code": 1,
+              "timed_out": false,
+              "evidence": "error: cannot assign a value to final variable pv"
+            }
+          ]
+        }
+      },
+      "base_failure_evidence": "",
+      "sft_failure_evidence": "error: cannot assign a value to final variable pv",
+      "log_interpretation": "基础组 3 条关联命令记录均成功；SFT 组 3 条均在编译阶段失败，诊断为对 final 局部变量 pv 再赋值。",
+      "excerpt_policy": "源码节选；未加入原样本不存在的代码，展示范围外部分省略。"
+    },
+    {
+      "id": "difficulty3_adf0c54aecaaa590",
+      "section": "附录",
+      "title": "QuotedStringAttribute：不完整输出未进入测试",
+      "domain": "智慧城市",
+      "repo": "leshan",
+      "repo_tag": "eclipse/leshan",
+      "target_path": "leshan-lwm2m-core/src/main/java/org/eclipse/leshan/core/link/attributes/QuotedStringAttribute.java",
+      "base_status": "passed",
+      "sft_status": "error",
+      "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+      "requirement_excerpt": "源码明确只对双引号执行自动处理：输出时把值中的双引号转换为反斜杠加双引号，解析时把反斜杠加双引号还原为双引号。",
+      "input_skeleton_excerpt": "package org.eclipse.leshan.core.link.attributes;\n\nimport org.eclipse.leshan.core.parser.StringParser;\nimport org.eclipse.leshan.core.util.Validate;\n\npublic class QuotedStringAttribute extends BaseAttribute {\n  public QuotedStringAttribute(String name, String value);\n  public QuotedStringAttribute(String name, String value, boolean validate);\n  @Override protected void validate();\n  @Override public String getValue();\n  @Override public String getCoreLinkValue();\n  public static <T extends Throwable> String consumeQuotedString(StringParser<T> parser) throws T;\n  public static <T extends Throwable> QuotedStringAttribute consumeQuotedString(String parmName, StringParser<T> parser) throws T;\n}",
+      "ground_truth_key_semantics": "解析时消费一对外层双引号，仅把反斜杠加双引号还原为引号；其他反斜杠序列按原样保留。",
+      "ground_truth_excerpt": "public static <T extends Throwable> String consumeQuotedString(StringParser<T> parser) throws T {\n        parser.consumeChar('\\\"');\n        int start = parser.getPosition();\n        while (!parser.nextCharIs('\\\"')) {\n            if (!parser.hasMoreChar()) {\n                // missing ending quote\n                parser.raiseException(\"Unable to parse [%s] : missing ending quote to '%s'\", parser.getStringToParse(),\n                        parser.substring(start - 1, parser.getPosition()));\n            }\n            // handle escaping\n            if (parser.nextCharIs('\\\\')) {\n                // consume \\ and escaped char\n                parser.consumeNextChar();\n                parser.consumeNextChar();\n            } else {\n                parser.consumeNextChar();\n            }\n        }\n        int end = parser.getPosition();\n        parser.consumeChar('\\\"');\n\n        String unquotedValue = parser.substring(start, end);\n        String valueUnescaped = unquotedValue.replace(\"\\\\\\\"\", \"\\\"\");\n        return valueUnescaped;\n    }",
+      "base_output_excerpt": "public static <T extends Throwable> String consumeQuotedString(StringParser<T> parser) throws T {\n    parser.consumeChar('\"');\n    int start = parser.getPosition();\n    while (!parser.nextCharIs('\"')) {\n      if (!parser.hasMoreChar()) {\n        parser.raiseException(parser.getStringToParse(), parser.substring(start - 1, parser.getPosition()));\n      }\n      if (parser.nextCharIs('\\\\')) {\n        parser.consumeNextChar();\n      }\n      parser.consumeNextChar();\n    }\n    int end = parser.getPosition();\n    parser.consumeChar('\"');\n    return parser.substring(start, end).replace(\"\\\\\\\"\", \"\\\"\");\n  }",
+      "sft_output_excerpt": "/*******************************************************************************\n * Copyright (c) 2015 Orange.\n *\n * All rights reserved. This program and the accompanying materials\n * are made available under the terms of the Eclipse Public License v2.0\n * and Eclipse Distribution License v1.0 which accompany this distribution.\n *\n * The Eclipse Public License is available at\n *    http://www.eclipse.org/legal/epl-v20.html\n * and the Eclipse Distribution License is available at\n *    http://www.eclipse.org/org/documents/edl-v10.html.\n *\n * Contributors:\n *     Orange - keep one JSON dependency\n *******************************************************************************/\npackage org.eclipse.leshan.core.link.attributes;\n\nimport org.eclipse.leshan.core.parser.StringParser;\nimport org.ecl",
+      "sft_raw_prediction": "/*******************************************************************************\n * Copyright (c) 2015 Orange.\n *\n * All rights reserved. This program and the accompanying materials\n * are made available under the terms of the Eclipse Public License v2.0\n * and Eclipse Distribution License v1.0 which accompany this distribution.\n *\n * The Eclipse Public License is available at\n *    http://www.eclipse.org/legal/epl-v20.html\n * and the Eclipse Distribution License is available at\n *    http://www.eclipse.org/org/documents/edl-v10.html.\n *\n * Contributors:\n *     Orange - keep one JSON dependency\n *******************************************************************************/\npackage org.eclipse.leshan.core.link.attributes;\n\nimport org.eclipse.leshan.core.parser.StringParser;\nimport org.eclipse.leshan.core.util.Validate;\n\n/**\n * Attribute whose value is a quoted-string.\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double-quotes are removed\n * from the value.\n * </p>\n *\n * <p>\n * The value of a quoted-string is a sequence of characters bounded by double-quotes. The double",
+      "command_records": {
+        "base": {
+          "command_record_count": 1,
+          "successful_command_records": 1,
+          "failed_command_records": 0,
+          "failing_command_samples": []
+        },
+        "sft_offline": {
+          "command_record_count": 0,
+          "successful_command_records": 0,
+          "failed_command_records": 0,
+          "failing_command_samples": []
+        }
+      },
+      "base_failure_evidence": "",
+      "sft_failure_evidence": "IllegalArgumentException: Model did not return a complete Java source file",
+      "log_interpretation": "基础组一条关联命令成功。SFT 预测虽非空，但 Javadoc 重复后在注释中截断；完整 Java 文件提取器拒绝输出，因此没有测试命令记录。",
+      "excerpt_policy": "源码节选；未加入原样本不存在的代码，展示范围外部分省略。"
+    }
+  ]
+}

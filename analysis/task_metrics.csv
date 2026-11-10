@@ -1,0 +1,41 @@
+﻿run,condition,task,subtask,domain,metric,value,numerator,denominator,scored_samples,passed,failed,errors,pending
+20261109-123917-aixcoder-v2,base,snippet,difficulty1_lines,企业信息化,CharacterAccuracy,,0,0,0,,,,
+20261109-123917-aixcoder-v2,base,snippet,difficulty1_lines,智慧物流,CharacterAccuracy,,0,0,0,,,,
+20261109-123917-aixcoder-v2,base,snippet,difficulty1_lines,智慧城市,CharacterAccuracy,,0,0,0,,,,
+20261109-123917-aixcoder-v2,base,snippet,difficulty1_lines,All domains,CharacterAccuracy,,0,0,0,,,,
+20261109-123917-aixcoder-v2,base,api,difficulty1_api,企业信息化,CharacterAccuracy,,0,0,0,,,,
+20261109-123917-aixcoder-v2,base,api,difficulty1_api,智慧物流,CharacterAccuracy,,0,0,0,,,,
+20261109-123917-aixcoder-v2,base,api,difficulty1_api,智慧城市,CharacterAccuracy,,0,0,0,,,,
+20261109-123917-aixcoder-v2,base,api,difficulty1_api,All domains,CharacterAccuracy,,0,0,0,,,,
+20261109-123917-aixcoder-v2,base,completion,difficulty2_ast,企业信息化,SamplePassRate,,0,0,,0,0,0,0
+20261109-123917-aixcoder-v2,base,completion,difficulty2_ast,智慧物流,SamplePassRate,,0,0,,0,0,0,0
+20261109-123917-aixcoder-v2,base,completion,difficulty2_ast,智慧城市,SamplePassRate,,0,0,,0,0,0,0
+20261109-123917-aixcoder-v2,base,completion,difficulty2_ast,All domains,SamplePassRate,,0,0,,0,0,0,0
+20261109-123917-aixcoder-v2,base,generation,difficulty2_function_body,企业信息化,SamplePassRate,,0,0,,0,0,0,0
+20261109-123917-aixcoder-v2,base,generation,difficulty2_function_body,智慧物流,SamplePassRate,,0,0,,0,0,0,0
+20261109-123917-aixcoder-v2,base,generation,difficulty2_function_body,智慧城市,SamplePassRate,,0,0,,0,0,0,0
+20261109-123917-aixcoder-v2,base,generation,difficulty2_function_body,All domains,SamplePassRate,,0,0,,0,0,0,0
+20261109-123917-aixcoder-v2,base,synthesis,difficulty3_files,企业信息化,SamplePassRate,0.1447368421,11,76,,11,65,0,0
+20261109-123917-aixcoder-v2,base,synthesis,difficulty3_files,智慧物流,SamplePassRate,0.2450980392,25,102,,25,77,0,0
+20261109-123917-aixcoder-v2,base,synthesis,difficulty3_files,智慧城市,SamplePassRate,0.1428571429,6,42,,6,36,0,0
+20261109-123917-aixcoder-v2,base,synthesis,difficulty3_files,All domains,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,snippet,difficulty1_lines,企业信息化,CharacterAccuracy,,0,0,0,,,,
+20261109-124514-sft-offline,sft,snippet,difficulty1_lines,智慧物流,CharacterAccuracy,,0,0,0,,,,
+20261109-124514-sft-offline,sft,snippet,difficulty1_lines,智慧城市,CharacterAccuracy,,0,0,0,,,,
+20261109-124514-sft-offline,sft,snippet,difficulty1_lines,All domains,CharacterAccuracy,,0,0,0,,,,
+20261109-124514-sft-offline,sft,api,difficulty1_api,企业信息化,CharacterAccuracy,,0,0,0,,,,
+20261109-124514-sft-offline,sft,api,difficulty1_api,智慧物流,CharacterAccuracy,,0,0,0,,,,
+20261109-124514-sft-offline,sft,api,difficulty1_api,智慧城市,CharacterAccuracy,,0,0,0,,,,
+20261109-124514-sft-offline,sft,api,difficulty1_api,All domains,CharacterAccuracy,,0,0,0,,,,
+20261109-124514-sft-offline,sft,completion,difficulty2_ast,企业信息化,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,completion,difficulty2_ast,智慧物流,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,completion,difficulty2_ast,智慧城市,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,completion,difficulty2_ast,All domains,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,generation,difficulty2_function_body,企业信息化,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,generation,difficulty2_function_body,智慧物流,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,generation,difficulty2_function_body,智慧城市,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,generation,difficulty2_function_body,All domains,SamplePassRate,,0,0,,0,0,0,0
+20261109-124514-sft-offline,sft,synthesis,difficulty3_files,企业信息化,SamplePassRate,0.7105263158,54,76,,54,22,0,0
+20261109-124514-sft-offline,sft,synthesis,difficulty3_files,智慧物流,SamplePassRate,0.8235294118,84,102,,84,18,0,0
+20261109-124514-sft-offline,sft,synthesis,difficulty3_files,智慧城市,SamplePassRate,0.7380952381,31,42,,31,10,1,0
+20261109-124514-sft-offline,sft,synthesis,difficulty3_files,All domains,SamplePassRate,,0,0,,0,0,0,0

@@ -1,0 +1,285 @@
+{
+  "source": {
+    "displayed_record_count": 1204,
+    "source_index_id_join_verified": true,
+    "source_sha256_join_verified": true,
+    "cohort_counts": {
+      "training": 984,
+      "shared_functional_eval": 220
+    },
+    "domain_cohort_counts": {
+      "企业信息化": {
+        "training": 336,
+        "shared_functional_eval": 76
+      },
+      "智慧物流": {
+        "training": 408,
+        "shared_functional_eval": 102
+      },
+      "智慧城市": {
+        "training": 240,
+        "shared_functional_eval": 42
+      }
+    },
+    "only_sft_train_counts_in_analysis": {
+      "training": {
+        "false": 281,
+        "true": 703
+      },
+      "shared_functional_eval": {
+        "false": 220
+      }
+    },
+    "functional_eval_ids_matched": 220
+  },
+  "definitions": {
+    "source_lines": "Stored v4 index field; number of LF-separated segments in the target source string (equivalent to LF count + 1), including blank lines, comments, and a trailing empty segment when the string ends in LF; not nonblank LOC.",
+    "source_chars": "Stored v4 index field for target source string character length; not a token count.",
+    "prompt_chars": "Stored v4 index field for the rendered prompt string character length; not a token count.",
+    "skeleton_chars": "Stored v4 index field for the target skeleton string character length; not a token count.",
+    "quantiles": "Linear interpolation at (n-1)*q over ascending values; p25, median, p75, and p90.",
+    "cohort_mapping": "Displayed rows consist only of the 984 training records and the 220 functionally evaluated records retained from the shared held-out source; record IDs and exact source hashes were matched."
+  },
+  "summaries": [
+    {
+      "domain": "企业信息化",
+      "cohort": "training",
+      "metric": "source_lines",
+      "count": 336,
+      "min": 22,
+      "p25": 48.75,
+      "median": 78.5,
+      "p75": 129.0,
+      "p90": 196.0,
+      "max": 294,
+      "mean": 96.247
+    },
+    {
+      "domain": "企业信息化",
+      "cohort": "training",
+      "metric": "prompt_chars",
+      "count": 336,
+      "min": 1122,
+      "p25": 6269.5,
+      "median": 8000.0,
+      "p75": 10625.0,
+      "p90": 13444.5,
+      "max": 21014,
+      "mean": 8637.565
+    },
+    {
+      "domain": "企业信息化",
+      "cohort": "training",
+      "metric": "skeleton_chars",
+      "count": 336,
+      "min": 88,
+      "p25": 384.5,
+      "median": 707.5,
+      "p75": 1145.0,
+      "p90": 1849.5,
+      "max": 4420,
+      "mean": 911.071
+    },
+    {
+      "domain": "企业信息化",
+      "cohort": "shared_functional_eval",
+      "metric": "source_lines",
+      "count": 76,
+      "min": 38,
+      "p25": 76.75,
+      "median": 122.0,
+      "p75": 168.0,
+      "p90": 218.0,
+      "max": 281,
+      "mean": 129.961
+    },
+    {
+      "domain": "企业信息化",
+      "cohort": "shared_functional_eval",
+      "metric": "prompt_chars",
+      "count": 76,
+      "min": 5038,
+      "p25": 7906.0,
+      "median": 9967.5,
+      "p75": 12006.75,
+      "p90": 13611.0,
+      "max": 15921,
+      "mean": 10063.829
+    },
+    {
+      "domain": "企业信息化",
+      "cohort": "shared_functional_eval",
+      "metric": "skeleton_chars",
+      "count": 76,
+      "min": 358,
+      "p25": 675.75,
+      "median": 994.5,
+      "p75": 1442.5,
+      "p90": 1820.0,
+      "max": 3181,
+      "mean": 1091.763
+    },
+    {
+      "domain": "智慧物流",
+      "cohort": "training",
+      "metric": "source_lines",
+      "count": 408,
+      "min": 14,
+      "p25": 41.75,
+      "median": 71.0,
+      "p75": 124.0,
+      "p90": 184.3,
+      "max": 371,
+      "mean": 91.49
+    },
+    {
+      "domain": "智慧物流",
+      "cohort": "training",
+      "metric": "prompt_chars",
+      "count": 408,
+      "min": 591,
+      "p25": 5728.75,
+      "median": 7960.5,
+      "p75": 10372.75,
+      "p90": 12611.8,
+      "max": 17977,
+      "mean": 8219.635
+    },
+    {
+      "domain": "智慧物流",
+      "cohort": "training",
+      "metric": "skeleton_chars",
+      "count": 408,
+      "min": 97,
+      "p25": 418.0,
+      "median": 758.0,
+      "p75": 1287.5,
+      "p90": 1931.6,
+      "max": 4464,
+      "mean": 952.179
+    },
+    {
+      "domain": "智慧物流",
+      "cohort": "shared_functional_eval",
+      "metric": "source_lines",
+      "count": 102,
+      "min": 21,
+      "p25": 51.0,
+      "median": 78.0,
+      "p75": 153.0,
+      "p90": 207.0,
+      "max": 384,
+      "mean": 107.137
+    },
+    {
+      "domain": "智慧物流",
+      "cohort": "shared_functional_eval",
+      "metric": "prompt_chars",
+      "count": 102,
+      "min": 3820,
+      "p25": 7344.0,
+      "median": 9246.0,
+      "p75": 11908.5,
+      "p90": 13571.0,
+      "max": 18272,
+      "mean": 9759.696
+    },
+    {
+      "domain": "智慧物流",
+      "cohort": "shared_functional_eval",
+      "metric": "skeleton_chars",
+      "count": 102,
+      "min": 261,
+      "p25": 640.0,
+      "median": 1007.0,
+      "p75": 1578.25,
+      "p90": 2509.8,
+      "max": 5643,
+      "mean": 1294.088
+    },
+    {
+      "domain": "智慧城市",
+      "cohort": "training",
+      "metric": "source_lines",
+      "count": 240,
+      "min": 10,
+      "p25": 39.75,
+      "median": 75.0,
+      "p75": 150.0,
+      "p90": 206.3,
+      "max": 280,
+      "mean": 98.208
+    },
+    {
+      "domain": "智慧城市",
+      "cohort": "training",
+      "metric": "prompt_chars",
+      "count": 240,
+      "min": 1191,
+      "p25": 6571.5,
+      "median": 9104.0,
+      "p75": 11874.0,
+      "p90": 14790.7,
+      "max": 19365,
+      "mean": 9280.312
+    },
+    {
+      "domain": "智慧城市",
+      "cohort": "training",
+      "metric": "skeleton_chars",
+      "count": 240,
+      "min": 127,
+      "p25": 495.75,
+      "median": 898.5,
+      "p75": 1326.0,
+      "p90": 2097.4,
+      "max": 5749,
+      "mean": 1053.825
+    },
+    {
+      "domain": "智慧城市",
+      "cohort": "shared_functional_eval",
+      "metric": "source_lines",
+      "count": 42,
+      "min": 19,
+      "p25": 59.0,
+      "median": 112.5,
+      "p75": 173.75,
+      "p90": 215.7,
+      "max": 268,
+      "mean": 117.548
+    },
+    {
+      "domain": "智慧城市",
+      "cohort": "shared_functional_eval",
+      "metric": "prompt_chars",
+      "count": 42,
+      "min": 3551,
+      "p25": 8286.75,
+      "median": 10897.0,
+      "p75": 12484.75,
+      "p90": 13421.9,
+      "max": 18025,
+      "mean": 10289.071
+    },
+    {
+      "domain": "智慧城市",
+      "cohort": "shared_functional_eval",
+      "metric": "skeleton_chars",
+      "count": 42,
+      "min": 139,
+      "p25": 629.0,
+      "median": 1116.0,
+      "p75": 1522.0,
+      "p90": 2161.1,
+      "max": 2784,
+      "mean": 1155.5
+    }
+  ],
+  "files": {
+    "records_csv": "data_complexity_records.csv",
+    "summary_csv": "data_complexity_summary.csv",
+    "figure_png": "figures\\data_complexity_distributions.png",
+    "figure_svg": "figures\\data_complexity_distributions.svg"
+  }
+}

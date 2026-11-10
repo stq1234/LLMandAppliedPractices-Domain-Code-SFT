@@ -1,0 +1,348 @@
+{
+  "experiment": "7b_v2_sft_v4_0905",
+  "base_model": "aiXcoder/aixcoder-7b-v2",
+  "model_revision": "94a44b5caba59512e26da3335e1b8bdd07ffc5fa",
+  "fine_tuning_method": "full-parameter SFT (no PEFT/LoRA flag in launch command)",
+  "training_config": {
+    "epochs_requested": 10,
+    "max_steps": -1,
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 1,
+    "effective_global_batch_size": 8,
+    "max_seq_length": 32768,
+    "learning_rate": 5e-06,
+    "warmup_ratio": 0.05,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "bf16": true,
+    "bf16_full_eval": true,
+    "gradient_checkpointing": true,
+    "flash_attention_2": true,
+    "use_liger_kernel": true,
+    "deepspeed_zero_stage": 3,
+    "num_processes": 8,
+    "num_machines": 1,
+    "train_records": 1822,
+    "eval_records": 452,
+    "steps_per_epoch": 228,
+    "total_steps": 2280,
+    "eval_steps_per_epoch": 57,
+    "train_data": {
+      "records": 1822,
+      "unique_ids": 1822,
+      "languages": {
+        "python": 838,
+        "java": 984
+      },
+      "only_sft_train": {
+        "false": 1119,
+        "true": 703
+      },
+      "unique_repositories": 30,
+      "unique_repo_paths": 1822,
+      "resolved_paths": 1822,
+      "source_sha256_unique": 1821,
+      "source_chars": {
+        "min": 252,
+        "p50": 3420,
+        "p90": 15980,
+        "max": 110863,
+        "mean": 6861.324368825466
+      },
+      "source_lines": {
+        "min": 10,
+        "p50": 103,
+        "p90": 416,
+        "max": 2356,
+        "mean": 191.4352360043908
+      },
+      "prompt_chars": {
+        "min": 591,
+        "p50": 7669,
+        "p90": 14311,
+        "max": 63301,
+        "mean": 9010.085620197586
+      },
+      "skeleton_chars": {
+        "min": 82,
+        "p50": 1046,
+        "p90": 4478,
+        "max": 48372,
+        "mean": 2306.2546652030737
+      }
+    },
+    "eval_data": {
+      "records": 452,
+      "unique_ids": 452,
+      "languages": {
+        "python": 210,
+        "java": 242
+      },
+      "only_sft_train": {
+        "false": 452
+      },
+      "unique_repositories": 29,
+      "unique_repo_paths": 452,
+      "resolved_paths": 452,
+      "source_sha256_unique": 452,
+      "source_chars": {
+        "min": 409,
+        "p50": 5410,
+        "p90": 23926,
+        "max": 87914,
+        "mean": 9618.566371681416
+      },
+      "source_lines": {
+        "min": 17,
+        "p50": 162,
+        "p90": 636,
+        "max": 2150,
+        "mean": 268.4380530973451
+      },
+      "prompt_chars": {
+        "min": 2433,
+        "p50": 10183,
+        "p90": 16882,
+        "max": 68918,
+        "mean": 11282.12389380531
+      },
+      "skeleton_chars": {
+        "min": 139,
+        "p50": 1587,
+        "p90": 7242,
+        "max": 54048,
+        "mean": 3293.0132743362833
+      }
+    },
+    "train_eval_overlap": {
+      "id_count": 0,
+      "repo_path_count": 0,
+      "source_sha256_exact_count": 0,
+      "source_sha256_normalized_count": 0,
+      "shared_repositories": 29,
+      "internal_train_exact_source_duplicates": [
+        {
+          "sha256": "df2d13acf1b55f80d144ab9da5d8f28b7266cfd5ce0519e1371366281d8e7a61",
+          "ids": [
+            "inventree--check_migrations--73aa40d6fc1611e2",
+            "inventree--runmigrations--6e322f8ef793a6a9"
+          ]
+        }
+      ]
+    },
+    "optimizer": "adamw_torch",
+    "lr_scheduler_type": "linear",
+    "warmup_steps": 114,
+    "data_shuffle_seed": 42,
+    "padding_free_completion_collator": true,
+    "response_template": "The complete source code begins below:\n",
+    "eot_token": "</s>",
+    "model_architecture": {
+      "model_type": "llama",
+      "vocab_size": 49152,
+      "max_position_embeddings": 65536,
+      "hidden_size": 4096,
+      "intermediate_size": 14464,
+      "num_hidden_layers": 32,
+      "num_attention_heads": 32,
+      "num_key_value_heads": 8,
+      "rope_theta": 256000,
+      "max_seq_length_used": 32768
+    },
+    "original_java_sft_split_alignment": {
+      "train": {
+        "v4_java_records": 984,
+        "matched_original_sft_ids": 984,
+        "matched_original_sft_split": 984,
+        "source_sha256_exact_match": 984
+      },
+      "test": {
+        "v4_java_records": 242,
+        "matched_original_sft_ids": 242,
+        "matched_original_sft_split": 242,
+        "source_sha256_exact_match": 242
+      }
+    },
+    "prompt_structure_audit": {
+      "records": 2275,
+      "response_marker_present": 2275,
+      "records_with_one_skeleton_heading": 2275,
+      "skeleton_field": "skeleton (singular)",
+      "dependency_closure_field_present": false,
+      "source_formatter": "prompt + source + </s>; no source/comment stripping in training formatter",
+      "source_rows_with_comment_lines": {
+        "train": {
+          "java": 977,
+          "python": 699
+        },
+        "test": {
+          "java": 242,
+          "python": 184
+        }
+      }
+    }
+  },
+  "runtime": {
+    "train_runtime_seconds": 14463.4404296875,
+    "train_runtime_hms": "4:01:03",
+    "train_samples_per_second": 1.2599999904632568,
+    "train_steps_per_second": 0.15800000727176666,
+    "trainer_reported_train_loss": 0.032330337911844254,
+    "eval_runtime_seconds_per_epoch": [
+      100.02660369873047,
+      99.54460144042969,
+      99.74099731445312,
+      99.81089782714844,
+      99.76809692382812,
+      99.55159759521484,
+      99.59120178222656,
+      99.25299835205078,
+      99.70069885253906,
+      99.59349822998047
+    ]
+  },
+  "event_file": {
+    "bytes": 489322,
+    "records": 9179,
+    "train_loss_points": 2280,
+    "eval_loss_points": 10
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "step": 228,
+      "train_loss_mean": 0.17415350871650795,
+      "eval_loss": 0.159280925989151,
+      "train_steps": 228
+    },
+    {
+      "epoch": 2,
+      "step": 456,
+      "train_loss_mean": 0.08171842098154389,
+      "eval_loss": 0.1609005331993103,
+      "train_steps": 228
+    },
+    {
+      "epoch": 3,
+      "step": 684,
+      "train_loss_mean": 0.03433026307621938,
+      "eval_loss": 0.17775428295135498,
+      "train_steps": 228
+    },
+    {
+      "epoch": 4,
+      "step": 912,
+      "train_loss_mean": 0.01703640353240955,
+      "eval_loss": 0.1919998675584793,
+      "train_steps": 228
+    },
+    {
+      "epoch": 5,
+      "step": 1140,
+      "train_loss_mean": 0.008565350882954112,
+      "eval_loss": 0.20572006702423096,
+      "train_steps": 228
+    },
+    {
+      "epoch": 6,
+      "step": 1368,
+      "train_loss_mean": 0.004204824566968774,
+      "eval_loss": 0.22111345827579498,
+      "train_steps": 228
+    },
+    {
+      "epoch": 7,
+      "step": 1596,
+      "train_loss_mean": 0.0019657894772535656,
+      "eval_loss": 0.2321208119392395,
+      "train_steps": 228
+    },
+    {
+      "epoch": 8,
+      "step": 1824,
+      "train_loss_mean": 0.0008907894780828716,
+      "eval_loss": 0.24841813743114471,
+      "train_steps": 228
+    },
+    {
+      "epoch": 9,
+      "step": 2052,
+      "train_loss_mean": 0.0003342105255637363,
+      "eval_loss": 0.2683348059654236,
+      "train_steps": 228
+    },
+    {
+      "epoch": 10,
+      "step": 2280,
+      "train_loss_mean": 9.210526265010948e-05,
+      "eval_loss": 0.27717381715774536,
+      "train_steps": 228
+    }
+  ],
+  "eval_loss_by_epoch": [
+    {
+      "epoch": 1,
+      "step": 228,
+      "eval_loss": 0.159280925989151
+    },
+    {
+      "epoch": 2,
+      "step": 456,
+      "eval_loss": 0.1609005331993103
+    },
+    {
+      "epoch": 3,
+      "step": 684,
+      "eval_loss": 0.17775428295135498
+    },
+    {
+      "epoch": 4,
+      "step": 912,
+      "eval_loss": 0.1919998675584793
+    },
+    {
+      "epoch": 5,
+      "step": 1140,
+      "eval_loss": 0.20572006702423096
+    },
+    {
+      "epoch": 6,
+      "step": 1368,
+      "eval_loss": 0.22111345827579498
+    },
+    {
+      "epoch": 7,
+      "step": 1596,
+      "eval_loss": 0.2321208119392395
+    },
+    {
+      "epoch": 8,
+      "step": 1824,
+      "eval_loss": 0.24841813743114471
+    },
+    {
+      "epoch": 9,
+      "step": 2052,
+      "eval_loss": 0.2683348059654236
+    },
+    {
+      "epoch": 10,
+      "step": 2280,
+      "eval_loss": 0.27717381715774536
+    }
+  ],
+  "loss_interpretation": "train_loss_mean is the arithmetic mean of the per-step train/loss scalar events within each epoch; trainer_reported_train_loss is the separate Trainer aggregate logged at the end.",
+  "offline_evaluation_provenance": {
+    "records": 220,
+    "v4_test_id_matches": 220,
+    "target_source_sha256_matches": 220,
+    "prediction_model": "aixcoder-7b-v2-sft-0826 (evaluation-worker provenance)",
+    "attribution_note": "The 220 offline prediction records are a subset of v4 test IDs/target sources, but their recorded inference model is the 0826 checkpoint, not this 0905 checkpoint."
+  },
+  "length_unit": "characters/lines; no tokenizer-based token count was computed.",
+  "data_source_bytes": {
+    "train.jsonl": 102669173,
+    "test.jsonl": 31141253
+  }
+}

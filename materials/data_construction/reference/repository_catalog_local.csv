@@ -1,0 +1,71 @@
+﻿repository_full_name,repository_url,domain,description,stars
+activiti,https://github.com/Activiti/Activiti,企业信息化,提供业务流程建模、审批和流程自动化管理能力。,10541
+arthas,https://github.com/alibaba/arthas,企业信息化,在线诊断和排查生产应用运行问题。,37499
+atlas,https://github.com/osmlab/atlas,智慧城市,管理和分析 OpenStreetMap 地理数据及可导航道路网络。,244
+avro,https://github.com/apache/avro,企业信息化,提供跨系统数据序列化和结构化传输能力。,3301
+axelor-open-platform,https://github.com/axelor/axelor-open-platform,企业信息化,提供快速构建企业业务应用的基础平台。,460
+calcite,https://github.com/apache/calcite,企业信息化,提供 SQL 解析、查询优化和多数据源查询能力。,5176
+californium,https://github.com/eclipse-californium/californium,智慧城市,提供物联网设备间的 CoAP 通信能力。,776
+canal,https://github.com/alibaba/canal,企业信息化,解析 MySQL 增量日志并提供数据订阅、同步和消费能力。,29725
+commons-collections,https://github.com/apache/commons-collections,企业信息化,提供集合结构和集合操作的通用能力。,726
+commons-io,https://github.com/apache/commons-io,企业信息化,提供文件、流和目录等输入输出处理能力。,1081
+commons-lang,https://github.com/apache/commons-lang,企业信息化,提供字符串、对象、数组和日期等通用工具能力。,3000
+commons-math,https://github.com/apache/commons-math,企业信息化,提供数学计算、统计分析、优化和数值处理等通用能力。,655
+commons-net,https://github.com/apache/commons-net,企业信息化,提供 FTP、SMTP、DNS 等网络协议访问能力。,296
+commons-text,https://github.com/apache/commons-text,企业信息化,提供文本转义、编码、相似度和模板处理能力。,377
+curator,https://github.com/apache/curator,企业信息化,为 ZooKeeper 提供更易用的分布式协调、服务发现和常用操作能力。,3172
+dependency-track,https://github.com/DependencyTrack/dependency-track,企业信息化,分析软件组件清单并识别供应链安全风险。,4147
+dropwizard,https://github.com/dropwizard/dropwizard,企业信息化,提供构建和运行 REST 服务的基础能力。,8577
+elasticgeo,https://github.com/ngageoint/elasticgeo,智慧城市,把 Elasticsearch 中的地理数据通过 GeoServer 和 OGC 服务发布出来。,172
+eventmesh,https://github.com/apache/eventmesh,企业信息化,提供事件发布、订阅和分发能力，支撑分布式事件驱动业务。,1746
+frankframework,https://github.com/frankframework/frankframework,企业信息化,通过配置在不同系统间转换、交换和监控业务消息。,165
+geoapi,https://github.com/opengeospatial/geoapi,智慧城市,定义地理信息系统所需的通用空间数据接口和模型。,140
+geolatte-geom,https://github.com/GeoLatte/geolatte-geom,智慧城市,提供符合 OGC 标准的空间几何模型、坐标系和格式转换能力。,143
+geometry-api-java,https://github.com/Esri/geometry-api-java,智慧城市,提供点线面等空间几何处理和空间数据分析能力。,709
+georchestra,https://github.com/georchestra/georchestra,智慧城市,提供地图目录、地图服务、权限管理和空间数据共享的一体化平台。,146
+geotools,https://github.com/geotools/geotools,智慧城市,提供空间数据读写、坐标转换、地图渲染和地理分析能力。,1925
+gozer,https://github.com/walmartlabs/gozer,智慧物流,解析供应链中的 EDI 订单、发货和运输状态等业务单据。,76
+graphhopper,https://github.com/graphhopper/graphhopper,智慧物流,计算道路路线、行驶距离、时间和导航路径。,6647
+graylog2-server,https://github.com/Graylog2/graylog2-server,企业信息化,集中收集、检索、分析和管理系统日志。,8115
+halo,https://github.com/halo-dev/halo,企业信息化,提供博客、知识库、企业网站和在线商城等内容建站能力。,39621
+helidon,https://github.com/helidon-io/helidon,企业信息化,提供构建微服务和网络应用所需的基础运行能力。,3813
+hilla,https://github.com/vaadin/hilla,企业信息化,帮助快速构建带类型安全接口和交互页面的企业业务应用。,984
+httpcomponents-client,https://github.com/apache/httpcomponents-client,企业信息化,提供访问和调用 HTTP 服务的客户端通信能力。,1534
+hugegraph,https://github.com/apache/hugegraph,企业信息化,提供可扩展图数据的存储、查询和关联分析能力。,3157
+jackrabbit-oak,https://github.com/apache/jackrabbit-oak,企业信息化,提供可扩展内容仓库的数据存储和访问能力。,412
+jap,https://github.com/fujieid/jap,企业信息化,提供统一的用户登录、第三方认证和单点登录能力。,168
+jmix,https://github.com/jmix-framework/jmix,企业信息化,提供企业应用的数据建模、权限、审计、报表和流程等通用能力。,699
+jpx,https://github.com/jenetics/jpx,智慧城市,读写和处理 GPS 轨迹文件及其中的路线、轨迹和位置数据。,221
+karaf,https://github.com/apache/karaf,企业信息化,提供企业应用模块部署、配置、日志和运行管理能力。,711
+kyuubi,https://github.com/apache/kyuubi,企业信息化,为数据仓库和数据湖提供多租户 SQL 查询网关。,2362
+leshan,https://github.com/eclipse/leshan,智慧城市,提供物联网设备的注册、连接管理和资源交互能力。,689
+mapfish-print,https://github.com/mapfish/mapfish-print,智慧城市,将地图和地理数据按模板生成可打印的地图报告。,197
+metasfresh,https://github.com/metasfresh/metasfresh,企业信息化,提供采购、销售、库存、财务和制造等企业资源管理能力。,2408
+micronaut-core,https://github.com/micronaut-projects/micronaut-core,企业信息化,提供构建模块化应用和微服务所需的基础能力。,6421
+nuxeo,https://github.com/nuxeo/nuxeo,企业信息化,提供文档、数字资产、知识和业务内容的统一管理能力。,708
+ofbiz-framework,https://github.com/apache/ofbiz-framework,企业信息化,提供覆盖 ERP、CRM、电子商务、供应链和制造的企业流程管理能力。,1111
+openig,https://github.com/OpenIdentityPlatform/OpenIG,企业信息化,作为身份网关统一处理登录、权限和单点访问。,92
+openkoda,https://github.com/openkoda/openkoda,企业信息化,提供用户、权限、多租户、数据管理和报表等企业应用基础能力。,1036
+openmrs-core,https://github.com/openmrs/openmrs-core,企业信息化,提供患者、就诊、病历和医疗业务的管理基础能力。,1901
+opentcs,https://github.com/openTCS/opentcs,智慧物流,管理仓储和工厂中的自动运输设备、任务调度和物料搬运。,561
+orientdb,https://github.com/orientechnologies/orientdb,企业信息化,提供图、文档、全文检索和地理空间数据的一体化数据库管理能力。,4983
+paho.mqtt.java,https://github.com/eclipse/paho.mqtt.java,智慧城市,提供物联网应用的 MQTT 消息连接能力。,2294
+pig,https://github.com/pig-mesh/pig,企业信息化,提供用户权限、认证、网关、监控、代码生成和业务后台管理能力。,6677
+planar_algorithm,https://github.com/huifer/planar_algorithm,智慧城市,提供二维点线面数据的坐标转换、插值、路径和几何分析算法。,117
+rebuild,https://github.com/getrebuild/rebuild,企业信息化,通过可配置的模型、流程和权限快速搭建企业管理系统。,1057
+rinsim,https://github.com/rinde/RinSim,智慧物流,模拟物流取货配送、车辆调度和自动导引车路径规划。,114
+ruoyi-vue-pro,https://github.com/YunaiV/ruoyi-vue-pro,企业信息化,提供用户权限、工作流、商城、支付、报表等企业后台业务能力。,39003
+sedona,https://github.com/apache/sedona,智慧城市,提供大规模地理空间数据的存储、查询和分析能力。,2390
+sentinel,https://github.com/alibaba/sentinel,企业信息化,提供服务限流、熔断、流量控制和系统过载保护。,23142
+servicecomb-java-chassis,https://github.com/apache/servicecomb-java-chassis,企业信息化,提供微服务注册发现、路由和服务治理能力。,1940
+shenyu,https://github.com/apache/shenyu,企业信息化,提供微服务 API 网关、流量治理和协议代理能力。,8821
+shiro,https://github.com/apache/shiro,企业信息化,提供应用登录认证、访问授权、会话管理和加密安全能力。,4452
+skywalking,https://github.com/apache/skywalking,企业信息化,监控分布式系统的调用链、服务拓扑、性能和运行状态。,24930
+sldeditor,https://github.com/sldeditor/sldeditor,智慧城市,编辑和管理地图图层样式及其符号化配置。,158
+spatial,https://github.com/neo4j-contrib/spatial,智慧城市,将地理空间数据导入图数据库并支持空间查询。,826
+streampark,https://github.com/apache/streampark,企业信息化,提供实时流处理应用的开发、部署、运行和运维管理能力。,4328
+stylebi,https://github.com/inetsoft-technology/stylebi,企业信息化,提供数据转换、可视化分析、报表和商业智能展示能力。,54
+tinfour,https://github.com/gwlucastrig/Tinfour,智慧城市,基于三角网对离散地形点进行插值、建模和地表分析。,190
+worldwindandroid,https://github.com/NASAWorldWind/WorldWindAndroid,智慧城市,在移动设备上展示三维地球、地形和地理位置数据。,301
+yudao-cloud,https://github.com/YunaiV/yudao-cloud,企业信息化,提供用户权限、工作流、CRM、ERP、商城和物联网等企业业务模块。,19452
+zookeeper,https://github.com/apache/zookeeper,企业信息化,提供分布式系统的配置管理、命名、同步和协调服务。,12795

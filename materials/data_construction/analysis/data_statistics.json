@@ -1,0 +1,269 @@
+{
+  "as_of": "2026-11-10",
+  "evidence_method": "Read-only inspection of a6000 files; aggregate analysis used inline standard-library Python with -B. No project scripts or services were run.",
+  "repository_pool": {
+    "local_repository_catalog_rows": 70,
+    "remote_repository_catalog_rows": 74,
+    "remote_catalog_unique_names": 74,
+    "remote_catalog_unique_github_urls": 70,
+    "remote_repository_summary_rows": 16,
+    "current_cloned_repositories": 10,
+    "current_cloned_repo_names": [
+      "canal",
+      "curator",
+      "eventmesh",
+      "geoapi",
+      "httpcomponents-client",
+      "leshan",
+      "mapfish-print",
+      "opentcs",
+      "tinfour",
+      "yudao-cloud"
+    ],
+    "stars_snapshot": {
+      "minimum": 54,
+      "maximum": 39621,
+      "catalog_rows_below_100": 3,
+      "current_clones_minimum": 140,
+      "fixed_star_threshold_confirmed": false,
+      "evidence_note": "No fixed star cutoff was present in the inspected builder, README, or bounded project documentation. The catalog records popularity values; the sample builder does not filter repositories by stars."
+    }
+  },
+  "current_task3_samples": {
+    "source_root": "/home/shaotianqi/LowCode/samples",
+    "sample_count": 220,
+    "repository_count": 9,
+    "unique_ids": 220,
+    "unique_repository_paths": 220,
+    "unique_source_sha256": 220,
+    "single_target_file_samples": 220,
+    "nonblank_requirements": 220,
+    "samples_with_tests": 220,
+    "test_case_references_total": 933,
+    "test_case_references_per_sample": {
+      "minimum": 1,
+      "median": 2,
+      "maximum": 89
+    },
+    "only_sft_train_true": 0,
+    "line_coverage": {
+      "filter_enabled": true,
+      "strict_threshold": 0.5,
+      "comparison": ">",
+      "minimum": 0.5076923076923077,
+      "median": 0.8787878787878788,
+      "maximum": 1.0
+    },
+    "sft_split_id_overlap": {
+      "sft_train": 0,
+      "sft_eval": 220,
+      "unmatched": 0
+    },
+    "domain_counts": [
+      {
+        "domain": "企业信息化",
+        "count": 76
+      },
+      {
+        "domain": "智慧物流",
+        "count": 102
+      },
+      {
+        "domain": "智慧城市",
+        "count": 42
+      }
+    ],
+    "repository_counts": [
+      {
+        "repository": "curator",
+        "domain": "企业信息化",
+        "count": 16
+      },
+      {
+        "repository": "eventmesh",
+        "domain": "企业信息化",
+        "count": 29
+      },
+      {
+        "repository": "geoapi",
+        "domain": "智慧城市",
+        "count": 3
+      },
+      {
+        "repository": "httpcomponents-client",
+        "domain": "企业信息化",
+        "count": 27
+      },
+      {
+        "repository": "leshan",
+        "domain": "智慧城市",
+        "count": 10
+      },
+      {
+        "repository": "mapfish-print",
+        "domain": "智慧城市",
+        "count": 28
+      },
+      {
+        "repository": "opentcs",
+        "domain": "智慧物流",
+        "count": 102
+      },
+      {
+        "repository": "tinfour",
+        "domain": "智慧城市",
+        "count": 1
+      },
+      {
+        "repository": "yudao-cloud",
+        "domain": "企业信息化",
+        "count": 4
+      }
+    ]
+  },
+  "sft_source_set": {
+    "sample_root": "/home/shaotianqi/LowCode/samples_all",
+    "observed_output_root": "/home/shaotianqi/LowCode/sft",
+    "sample_count": 1226,
+    "unique_ids": 1226,
+    "unique_repository_paths": 1226,
+    "split_counts": {
+      "train": 984,
+      "eval": 242
+    },
+    "only_sft_train_true": 703,
+    "train_only_sft_train_true": 703,
+    "train_normal": 281,
+    "eval_only_sft_train_true": 0,
+    "eval_normal": 242,
+    "domain_counts": [
+      {
+        "domain": "企业信息化",
+        "all": 416,
+        "train": 336,
+        "eval": 80
+      },
+      {
+        "domain": "智慧物流",
+        "all": 510,
+        "train": 408,
+        "eval": 102
+      },
+      {
+        "domain": "智慧城市",
+        "all": 300,
+        "train": 240,
+        "eval": 60
+      }
+    ],
+    "repository_counts": [
+      {
+        "repository": "canal",
+        "domain": "企业信息化",
+        "all": 2,
+        "train": 2,
+        "eval": 0
+      },
+      {
+        "repository": "curator",
+        "domain": "企业信息化",
+        "all": 92,
+        "train": 74,
+        "eval": 18
+      },
+      {
+        "repository": "eventmesh",
+        "domain": "企业信息化",
+        "all": 154,
+        "train": 124,
+        "eval": 30
+      },
+      {
+        "repository": "geoapi",
+        "domain": "智慧城市",
+        "all": 20,
+        "train": 16,
+        "eval": 4
+      },
+      {
+        "repository": "httpcomponents-client",
+        "domain": "企业信息化",
+        "all": 144,
+        "train": 116,
+        "eval": 28
+      },
+      {
+        "repository": "leshan",
+        "domain": "智慧城市",
+        "all": 60,
+        "train": 48,
+        "eval": 12
+      },
+      {
+        "repository": "mapfish-print",
+        "domain": "智慧城市",
+        "all": 215,
+        "train": 172,
+        "eval": 43
+      },
+      {
+        "repository": "opentcs",
+        "domain": "智慧物流",
+        "all": 510,
+        "train": 408,
+        "eval": 102
+      },
+      {
+        "repository": "tinfour",
+        "domain": "智慧城市",
+        "all": 5,
+        "train": 4,
+        "eval": 1
+      },
+      {
+        "repository": "yudao-cloud",
+        "domain": "企业信息化",
+        "all": 24,
+        "train": 20,
+        "eval": 4
+      }
+    ],
+    "current_220_sample_ids_in_eval": 220,
+    "current_220_sample_ids_in_train": 0,
+    "eval_ids_outside_current_samples": 22,
+    "sft_record_fields": [
+      "id",
+      "prompt",
+      "source",
+      "skeleton",
+      "detailed_requirement",
+      "only_sft_train"
+    ],
+    "path_and_sha256_joined_from_original_sample_by_id": true,
+    "split_role_semantics": {
+      "train": "training data",
+      "eval": "shared held-out evaluation source used for training-time evaluation and functional evaluation"
+    },
+    "functional_evaluation_selection": {
+      "final_effective_samples": 220,
+      "not_retained_from_shared_source": 22,
+      "final_domain_counts": {
+        "企业信息化": 76,
+        "智慧物流": 102,
+        "智慧城市": 42
+      },
+      "not_retained_domain_counts": {
+        "企业信息化": 4,
+        "智慧物流": 0,
+        "智慧城市": 18
+      },
+      "same_shared_source_for_training_time_and_functional_evaluation": true
+    }
+  },
+  "provenance_caveats": [
+    "The current samples root contains 220 task-3 samples; the observed 1226-row SFT output aligns by ID with samples_all, not with the current samples root.",
+    "The current 220 task-3 sample IDs are a subset of the shared held-out evaluation source; training-time evaluation and functional evaluation reuse this source. The 220 records are the final effective functional-evaluation subset; 22 source records were not retained.",
+    "Current sample metadata names requirement_model as gpt-5.6-sol, while the local requirement-generation helper names gpt-5.6-luna. Do not treat the sample field as definitive evidence of the model that generated the text.",
+    "The source sample stores a dependency skeleton closure, but build_sft.py renders only the first deduplicated skeleton into the training prompt; target skeleton is first in that list."
+  ]
+}

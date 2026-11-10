@@ -1,0 +1,81 @@
+﻿condition,run,domain,n_samples,nonpass_samples,failure_category,count,share_of_nonpass,share_of_all_samples
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,compile_type_or_api,5,0.076923,0.065789
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,compile_missing_symbol,16,0.246154,0.210526
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,compile_syntax_or_structure,44,0.676923,0.578947
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,compile_other,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,assertion_or_expected_result,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,runtime_exception,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,runtime_timeout,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,build_or_test_infrastructure,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,output_extraction_error,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,企业信息化,76,65,other_unclear,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,compile_type_or_api,5,0.064935,0.049020
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,compile_missing_symbol,16,0.207792,0.156863
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,compile_syntax_or_structure,52,0.675325,0.509804
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,compile_other,1,0.012987,0.009804
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,assertion_or_expected_result,2,0.025974,0.019608
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,runtime_exception,1,0.012987,0.009804
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,runtime_timeout,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,build_or_test_infrastructure,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,output_extraction_error,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧物流,102,77,other_unclear,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,compile_type_or_api,6,0.166667,0.142857
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,compile_missing_symbol,8,0.222222,0.190476
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,compile_syntax_or_structure,19,0.527778,0.452381
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,compile_other,2,0.055556,0.047619
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,assertion_or_expected_result,1,0.027778,0.023810
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,runtime_exception,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,runtime_timeout,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,build_or_test_infrastructure,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,output_extraction_error,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,智慧城市,42,36,other_unclear,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,All domains,220,178,compile_type_or_api,16,0.089888,0.072727
+base,20261109-123917-aixcoder-v2,All domains,220,178,compile_missing_symbol,40,0.224719,0.181818
+base,20261109-123917-aixcoder-v2,All domains,220,178,compile_syntax_or_structure,115,0.646067,0.522727
+base,20261109-123917-aixcoder-v2,All domains,220,178,compile_other,3,0.016854,0.013636
+base,20261109-123917-aixcoder-v2,All domains,220,178,assertion_or_expected_result,3,0.016854,0.013636
+base,20261109-123917-aixcoder-v2,All domains,220,178,runtime_exception,1,0.005618,0.004545
+base,20261109-123917-aixcoder-v2,All domains,220,178,runtime_timeout,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,All domains,220,178,build_or_test_infrastructure,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,All domains,220,178,output_extraction_error,0,0.000000,0.000000
+base,20261109-123917-aixcoder-v2,All domains,220,178,other_unclear,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,compile_type_or_api,5,0.227273,0.065789
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,compile_missing_symbol,2,0.090909,0.026316
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,compile_syntax_or_structure,7,0.318182,0.092105
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,compile_other,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,assertion_or_expected_result,5,0.227273,0.065789
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,runtime_exception,3,0.136364,0.039474
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,runtime_timeout,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,build_or_test_infrastructure,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,output_extraction_error,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,企业信息化,76,22,other_unclear,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,compile_type_or_api,6,0.333333,0.058824
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,compile_missing_symbol,4,0.222222,0.039216
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,compile_syntax_or_structure,2,0.111111,0.019608
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,compile_other,1,0.055556,0.009804
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,assertion_or_expected_result,2,0.111111,0.019608
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,runtime_exception,3,0.166667,0.029412
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,runtime_timeout,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,build_or_test_infrastructure,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,output_extraction_error,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧物流,102,18,other_unclear,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,compile_type_or_api,2,0.181818,0.047619
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,compile_missing_symbol,2,0.181818,0.047619
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,compile_syntax_or_structure,5,0.454545,0.119048
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,compile_other,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,assertion_or_expected_result,1,0.090909,0.023810
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,runtime_exception,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,runtime_timeout,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,build_or_test_infrastructure,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,output_extraction_error,1,0.090909,0.023810
+sft_offline,20261109-124514-sft-offline,智慧城市,42,11,other_unclear,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,All domains,220,51,compile_type_or_api,13,0.254902,0.059091
+sft_offline,20261109-124514-sft-offline,All domains,220,51,compile_missing_symbol,8,0.156863,0.036364
+sft_offline,20261109-124514-sft-offline,All domains,220,51,compile_syntax_or_structure,14,0.274510,0.063636
+sft_offline,20261109-124514-sft-offline,All domains,220,51,compile_other,1,0.019608,0.004545
+sft_offline,20261109-124514-sft-offline,All domains,220,51,assertion_or_expected_result,8,0.156863,0.036364
+sft_offline,20261109-124514-sft-offline,All domains,220,51,runtime_exception,6,0.117647,0.027273
+sft_offline,20261109-124514-sft-offline,All domains,220,51,runtime_timeout,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,All domains,220,51,build_or_test_infrastructure,0,0.000000,0.000000
+sft_offline,20261109-124514-sft-offline,All domains,220,51,output_extraction_error,1,0.019608,0.004545
+sft_offline,20261109-124514-sft-offline,All domains,220,51,other_unclear,0,0.000000,0.000000

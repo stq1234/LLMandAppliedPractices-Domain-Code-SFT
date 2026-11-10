@@ -1,0 +1,176 @@
+{
+  "scope": {
+    "runs": {
+      "base": "20261109-123917-aixcoder-v2",
+      "sft_offline": "20261109-124514-sft-offline"
+    },
+    "paired_samples": 220,
+    "classified_nonpass_rows": 229,
+    "domains": [
+      "企业信息化",
+      "智慧物流",
+      "智慧城市",
+      "All domains"
+    ],
+    "unit_of_count": "one row per sample per run; repeated commands/log lines are not repeated sample counts"
+  },
+  "classification_rules_file": "error_classification_rules.md",
+  "categories": [
+    "compile_type_or_api",
+    "compile_missing_symbol",
+    "compile_syntax_or_structure",
+    "compile_other",
+    "assertion_or_expected_result",
+    "runtime_exception",
+    "runtime_timeout",
+    "build_or_test_infrastructure",
+    "output_extraction_error",
+    "other_unclear"
+  ],
+  "by_run_and_domain": {
+    "base": {
+      "企业信息化": {
+        "n_samples": 76,
+        "nonpass_samples": 65,
+        "category_counts": {
+          "compile_type_or_api": 5,
+          "compile_missing_symbol": 16,
+          "compile_syntax_or_structure": 44,
+          "compile_other": 0,
+          "assertion_or_expected_result": 0,
+          "runtime_exception": 0,
+          "runtime_timeout": 0,
+          "build_or_test_infrastructure": 0,
+          "output_extraction_error": 0,
+          "other_unclear": 0
+        }
+      },
+      "智慧物流": {
+        "n_samples": 102,
+        "nonpass_samples": 77,
+        "category_counts": {
+          "compile_type_or_api": 5,
+          "compile_missing_symbol": 16,
+          "compile_syntax_or_structure": 52,
+          "compile_other": 1,
+          "assertion_or_expected_result": 2,
+          "runtime_exception": 1,
+          "runtime_timeout": 0,
+          "build_or_test_infrastructure": 0,
+          "output_extraction_error": 0,
+          "other_unclear": 0
+        }
+      },
+      "智慧城市": {
+        "n_samples": 42,
+        "nonpass_samples": 36,
+        "category_counts": {
+          "compile_type_or_api": 6,
+          "compile_missing_symbol": 8,
+          "compile_syntax_or_structure": 19,
+          "compile_other": 2,
+          "assertion_or_expected_result": 1,
+          "runtime_exception": 0,
+          "runtime_timeout": 0,
+          "build_or_test_infrastructure": 0,
+          "output_extraction_error": 0,
+          "other_unclear": 0
+        }
+      },
+      "All domains": {
+        "n_samples": 220,
+        "nonpass_samples": 178,
+        "category_counts": {
+          "compile_type_or_api": 16,
+          "compile_missing_symbol": 40,
+          "compile_syntax_or_structure": 115,
+          "compile_other": 3,
+          "assertion_or_expected_result": 3,
+          "runtime_exception": 1,
+          "runtime_timeout": 0,
+          "build_or_test_infrastructure": 0,
+          "output_extraction_error": 0,
+          "other_unclear": 0
+        }
+      }
+    },
+    "sft_offline": {
+      "企业信息化": {
+        "n_samples": 76,
+        "nonpass_samples": 22,
+        "category_counts": {
+          "compile_type_or_api": 5,
+          "compile_missing_symbol": 2,
+          "compile_syntax_or_structure": 7,
+          "compile_other": 0,
+          "assertion_or_expected_result": 5,
+          "runtime_exception": 3,
+          "runtime_timeout": 0,
+          "build_or_test_infrastructure": 0,
+          "output_extraction_error": 0,
+          "other_unclear": 0
+        }
+      },
+      "智慧物流": {
+        "n_samples": 102,
+        "nonpass_samples": 18,
+        "category_counts": {
+          "compile_type_or_api": 6,
+          "compile_missing_symbol": 4,
+          "compile_syntax_or_structure": 2,
+          "compile_other": 1,
+          "assertion_or_expected_result": 2,
+          "runtime_exception": 3,
+          "runtime_timeout": 0,
+          "build_or_test_infrastructure": 0,
+          "output_extraction_error": 0,
+          "other_unclear": 0
+        }
+      },
+      "智慧城市": {
+        "n_samples": 42,
+        "nonpass_samples": 11,
+        "category_counts": {
+          "compile_type_or_api": 2,
+          "compile_missing_symbol": 2,
+          "compile_syntax_or_structure": 5,
+          "compile_other": 0,
+          "assertion_or_expected_result": 1,
+          "runtime_exception": 0,
+          "runtime_timeout": 0,
+          "build_or_test_infrastructure": 0,
+          "output_extraction_error": 1,
+          "other_unclear": 0
+        }
+      },
+      "All domains": {
+        "n_samples": 220,
+        "nonpass_samples": 51,
+        "category_counts": {
+          "compile_type_or_api": 13,
+          "compile_missing_symbol": 8,
+          "compile_syntax_or_structure": 14,
+          "compile_other": 1,
+          "assertion_or_expected_result": 8,
+          "runtime_exception": 6,
+          "runtime_timeout": 0,
+          "build_or_test_infrastructure": 0,
+          "output_extraction_error": 1,
+          "other_unclear": 0
+        }
+      }
+    }
+  },
+  "paired_outcomes_all_domains": {
+    "repaired_fail_to_pass": 131,
+    "residual_fail_to_fail": 47,
+    "new_failure_pass_to_fail": 3,
+    "new_error_pass_to_error": 1,
+    "stable_pass": 38
+  },
+  "confidence_counts": {
+    "high": 224,
+    "medium": 5
+  },
+  "low_confidence_or_unclear_ids": []
+}

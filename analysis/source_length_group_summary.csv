@@ -1,0 +1,4 @@
+﻿length_group,observed_source_lines,n_samples,base_pass_count,base_pass_rate_pct,sft_pass_count,sft_pass_rate_pct,delta_pp,fail_to_pass,fail_to_fail,pass_to_fail,pass_to_error,pass_to_pass,domain_mix,repository_mix
+short,19-71,75,23,30.7,67,89.3,58.7,45,7,1,0,22,企业信息化:12; 智慧城市:17; 智慧物流:46,curator:3; eventmesh:9; geoapi:1; leshan:5; mapfish-print:11; opentcs:46
+medium,72-134,72,15,20.8,61,84.7,63.9,49,8,2,1,12,企业信息化:33; 智慧城市:11; 智慧物流:28,curator:6; eventmesh:14; geoapi:1; httpcomponents-client:12; leshan:3; mapfish-print:7; opentcs:28; yudao-cloud:1
+long,138-384,73,4,5.5,41,56.2,50.7,37,32,0,0,4,企业信息化:31; 智慧城市:14; 智慧物流:28,curator:7; eventmesh:6; geoapi:1; httpcomponents-client:15; leshan:2; mapfish-print:10; opentcs:28; tinfour:1; yudao-cloud:3

@@ -1,0 +1,44 @@
+{
+  "id": "difficulty3_b1a5f27af4b7f4d0",
+  "case_type": "fail_to_pass_compile_error",
+  "domain": "智慧物流",
+  "repo": "opentcs",
+  "repo_tag": "openTCS/opentcs",
+  "target_path": "opentcs-api-base/src/main/java/org/opentcs/data/model/Couple.java",
+  "base_status": "failed",
+  "sft_status": "passed",
+  "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+  "ground_truth": "// SPDX-FileCopyrightText: The openTCS Authors\r\n// SPDX-License-Identifier: MIT\r\npackage org.opentcs.data.model;\r\n\r\nimport java.io.Serializable;\r\n\r\n/**\r\n * A generic 2-tuple of long integer values, usable for 2D coordinates and vectors, for instance.\r\n */\r\npublic class Couple\r\n    implements\r\n      Serializable {\r\n\r\n  /**\r\n   * The X coordinate.\r\n   */\r\n  private final long x;\r\n  /**\r\n   * The Y coordinate.\r\n   */\r\n  private final long y;\r\n\r\n  /**\r\n   * Creates a new instance.\r\n   *\r\n   * @param x The X coordinate.\r\n   * @param y The Y coordinate.\r\n   */\r\n  public Couple(long x, long y) {\r\n    this.x = x;\r\n    this.y = y;\r\n  }\r\n\r\n  /**\r\n   * Returns the x coordinate.\r\n   *\r\n   * @return x\r\n   */\r\n  public long getX() {\r\n    return x;\r\n  }\r\n\r\n  /**\r\n   * Returns the y coordinate.\r\n   *\r\n   * @return y\r\n   */\r\n  public long getY() {\r\n    return y;\r\n  }\r\n\r\n  @Override\r\n  public boolean equals(Object obj) {\r\n    if (!(obj instanceof Couple other)) {\r\n      return false;\r\n    }\r\n    if (this.x != other.x) {\r\n      return false;\r\n    }\r\n    if (this.y != other.y) {\r\n      return false;\r\n    }\r\n    return true;\r\n  }\r\n\r\n  @Override\r\n  public int hashCode() {\r\n    return (int) (x ^ y);\r\n  }\r\n\r\n  @Override\r\n  public String toString() {\r\n    return \"Couple{\" + \"x=\" + x + \", y=\" + y + '}';\r\n  }\r\n}\r\n",
+  "base_model_output": "package org.opentcs.data.model;\n\nimport java.io.Serializable;\n\npublic class Couple implements Serializable {\n  private final long x;\n  private final long y;\n\n  public Couple(long x, long y) {\n    this.x = x;\n    this.y = y;\n  }\n\n  public long getX() {\n    return x;\n  }\n\n  public long getY() {\n    return y;\n  }\n\n  @Override public boolean equals(Object obj) {\n    return obj instanceof Couple\n        && ((Couple) obj).x == x\n        && ((Couple) obj).y == y;\n  }\n\n  @Override public int hashCode() {\n    return x ^ y;\n  }\n\n  @Override public String toString() {\n    return \"Couple{x=\" + x + \", y=\" + y + \"}\";\n  }\n}\n",
+  "sft_model_output": "package org.opentcs.data.model;\r\n\r\nimport java.io.Serializable;\r\n\r\n/**\r\n * A generic couple of two longs.\r\n */\r\npublic class Couple\r\n    implements\r\n      Serializable {\r\n\r\n  /**\r\n   * The x coordinate.\r\n   */\r\n  private final long x;\r\n  /**\r\n   * The y coordinate.\r\n   */\r\n  private final long y;\r\n\r\n  /**\r\n   * Creates a new Couple.\r\n   *\r\n   * @param x The x coordinate.\r\n   * @param y The y coordinate.\r\n   */\r\n  public Couple(long x, long y) {\r\n    this.x = x;\r\n    this.y = y;\r\n  }\r\n\r\n  /**\r\n   * Returns the x coordinate.\r\n   *\r\n   * @return The x coordinate.\r\n   */\r\n  public long getX() {\r\n    return x;\r\n  }\r\n\r\n  /**\r\n   * Returns the y coordinate.\r\n   *\r\n   * @return The y coordinate.\r\n   */\r\n  public long getY() {\r\n    return y;\r\n  }\r\n\r\n  @Override\r\n  public boolean equals(Object obj) {\r\n    if (!(obj instanceof Couple)) {\r\n      return false;\r\n    }\r\n\r\n    return x == ((Couple) obj).x && y == ((Couple) obj).y;\r\n  }\r\n\r\n  @Override\r\n  public int hashCode() {\r\n    return (int) (x ^ y);\r\n  }\r\n\r\n  @Override\r\n  public String toString() {\r\n    return \"Couple{\" + \"x=\" + x + \", y=\" + y + '}';\r\n  }\r\n}\n",
+  "sft_prediction_raw_output": "// SPDX-FileCopyrightText: The openTCS Authors\r\n// SPDX-License-Identifier: MIT\r\npackage org.opentcs.data.model;\r\n\r\nimport java.io.Serializable;\r\n\r\n/**\r\n * A generic couple of two longs.\r\n */\r\npublic class Couple\r\n    implements\r\n      Serializable {\r\n\r\n  /**\r\n   * The x coordinate.\r\n   */\r\n  private final long x;\r\n  /**\r\n   * The y coordinate.\r\n   */\r\n  private final long y;\r\n\r\n  /**\r\n   * Creates a new Couple.\r\n   *\r\n   * @param x The x coordinate.\r\n   * @param y The y coordinate.\r\n   */\r\n  public Couple(long x, long y) {\r\n    this.x = x;\r\n    this.y = y;\r\n  }\r\n\r\n  /**\r\n   * Returns the x coordinate.\r\n   *\r\n   * @return The x coordinate.\r\n   */\r\n  public long getX() {\r\n    return x;\r\n  }\r\n\r\n  /**\r\n   * Returns the y coordinate.\r\n   *\r\n   * @return The y coordinate.\r\n   */\r\n  public long getY() {\r\n    return y;\r\n  }\r\n\r\n  @Override\r\n  public boolean equals(Object obj) {\r\n    if (!(obj instanceof Couple)) {\r\n      return false;\r\n    }\r\n\r\n    return x == ((Couple) obj).x && y == ((Couple) obj).y;\r\n  }\r\n\r\n  @Override\r\n  public int hashCode() {\r\n    return (int) (x ^ y);\r\n  }\r\n\r\n  @Override\r\n  public String toString() {\r\n    return \"Couple{\" + \"x=\" + x + \", y=\" + y + '}';\r\n  }\r\n}",
+  "base_error": "",
+  "sft_error": "",
+  "base_test_evidence": [
+    {
+      "command": "bash ./gradlew :opentcs-api-base:test --tests \"org.opentcs.data.model.ModelSerializationTest.shouldSerializeAndDeserializeEnvironmentalEntity\"",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_seconds": 2.014,
+      "excerpt_lines": [
+        "/home/shaotianqi/LowCode/java-evaluator/build/tmp/java-function-repo-opentcs-worker-8-1895587060178978465/repo/opentcs-api-base/src/main/java/org/opentcs/data/model/Couple.java:29: error: incompatible types: possible lossy conversion from long to int",
+        "FAILURE: Build failed with an exception.",
+        "/home/shaotianqi/LowCode/java-evaluator/build/tmp/java-function-repo-opentcs-worker-8-1895587060178978465/repo/opentcs-api-base/src/main/java/org/opentcs/data/model/Couple.java:29: error: incompatible types: possible lossy conversion from long to int",
+        "> Check your code and dependencies to fix the compilation error(s)",
+        "BUILD FAILED in 1s"
+      ]
+    }
+  ],
+  "sft_test_evidence": [
+    {
+      "command": "bash ./gradlew :opentcs-api-base:test --tests \"org.opentcs.data.model.ModelSerializationTest.shouldSerializeAndDeserializeEnvironmentalEntity\"",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_seconds": 11.108,
+      "excerpt_lines": [
+        "BUILD SUCCESSFUL in 9s"
+      ]
+    }
+  ],
+  "sample_expected_test_commands": 1
+}

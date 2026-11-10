@@ -1,0 +1,520 @@
+[
+  {
+    "repository_full_name": "amodeus",
+    "repository_url": "https://github.com/Activiti/Activiti",
+    "domain": "智慧城市",
+    "description": "提供业务流程建模、审批和流程自动化管理能力。",
+    "stars": 10541
+  },
+  {
+    "repository_full_name": "movsim",
+    "repository_url": "https://github.com/Activiti/Activiti",
+    "domain": "智慧城市",
+    "description": "提供业务流程建模、审批和流程自动化管理能力。",
+    "stars": 10541
+  },
+  {
+    "repository_full_name": "otp-java-client",
+    "repository_url": "https://github.com/Activiti/Activiti",
+    "domain": "智慧城市",
+    "description": "提供业务流程建模、审批和流程自动化管理能力。",
+    "stars": 10541
+  },
+  {
+    "repository_full_name": "pt2matsim",
+    "repository_url": "https://github.com/Activiti/Activiti",
+    "domain": "智慧城市",
+    "description": "提供业务流程建模、审批和流程自动化管理能力。",
+    "stars": 10541
+  },
+  {
+    "repository_full_name": "activiti",
+    "repository_url": "https://github.com/Activiti/Activiti",
+    "domain": "企业信息化",
+    "description": "提供业务流程建模、审批和流程自动化管理能力。",
+    "stars": 10541
+  },
+  {
+    "repository_full_name": "arthas",
+    "repository_url": "https://github.com/alibaba/arthas",
+    "domain": "企业信息化",
+    "description": "在线诊断和排查生产应用运行问题。",
+    "stars": 37499
+  },
+  {
+    "repository_full_name": "atlas",
+    "repository_url": "https://github.com/osmlab/atlas",
+    "domain": "智慧城市",
+    "description": "管理和分析 OpenStreetMap 地理数据及可导航道路网络。",
+    "stars": 244
+  },
+  {
+    "repository_full_name": "avro",
+    "repository_url": "https://github.com/apache/avro",
+    "domain": "企业信息化",
+    "description": "提供跨系统数据序列化和结构化传输能力。",
+    "stars": 3301
+  },
+  {
+    "repository_full_name": "axelor-open-platform",
+    "repository_url": "https://github.com/axelor/axelor-open-platform",
+    "domain": "企业信息化",
+    "description": "提供快速构建企业业务应用的基础平台。",
+    "stars": 460
+  },
+  {
+    "repository_full_name": "calcite",
+    "repository_url": "https://github.com/apache/calcite",
+    "domain": "企业信息化",
+    "description": "提供 SQL 解析、查询优化和多数据源查询能力。",
+    "stars": 5176
+  },
+  {
+    "repository_full_name": "californium",
+    "repository_url": "https://github.com/eclipse-californium/californium",
+    "domain": "智慧城市",
+    "description": "提供物联网设备间的 CoAP 通信能力。",
+    "stars": 776
+  },
+  {
+    "repository_full_name": "canal",
+    "repository_url": "https://github.com/alibaba/canal",
+    "domain": "企业信息化",
+    "description": "解析 MySQL 增量日志并提供数据订阅、同步和消费能力。",
+    "stars": 29725
+  },
+  {
+    "repository_full_name": "commons-collections",
+    "repository_url": "https://github.com/apache/commons-collections",
+    "domain": "企业信息化",
+    "description": "提供集合结构和集合操作的通用能力。",
+    "stars": 726
+  },
+  {
+    "repository_full_name": "commons-io",
+    "repository_url": "https://github.com/apache/commons-io",
+    "domain": "企业信息化",
+    "description": "提供文件、流和目录等输入输出处理能力。",
+    "stars": 1081
+  },
+  {
+    "repository_full_name": "commons-lang",
+    "repository_url": "https://github.com/apache/commons-lang",
+    "domain": "企业信息化",
+    "description": "提供字符串、对象、数组和日期等通用工具能力。",
+    "stars": 3000
+  },
+  {
+    "repository_full_name": "commons-math",
+    "repository_url": "https://github.com/apache/commons-math",
+    "domain": "企业信息化",
+    "description": "提供数学计算、统计分析、优化和数值处理等通用能力。",
+    "stars": 655
+  },
+  {
+    "repository_full_name": "commons-net",
+    "repository_url": "https://github.com/apache/commons-net",
+    "domain": "企业信息化",
+    "description": "提供 FTP、SMTP、DNS 等网络协议访问能力。",
+    "stars": 296
+  },
+  {
+    "repository_full_name": "commons-text",
+    "repository_url": "https://github.com/apache/commons-text",
+    "domain": "企业信息化",
+    "description": "提供文本转义、编码、相似度和模板处理能力。",
+    "stars": 377
+  },
+  {
+    "repository_full_name": "curator",
+    "repository_url": "https://github.com/apache/curator",
+    "domain": "企业信息化",
+    "description": "为 ZooKeeper 提供更易用的分布式协调、服务发现和常用操作能力。",
+    "stars": 3172
+  },
+  {
+    "repository_full_name": "dependency-track",
+    "repository_url": "https://github.com/DependencyTrack/dependency-track",
+    "domain": "企业信息化",
+    "description": "分析软件组件清单并识别供应链安全风险。",
+    "stars": 4147
+  },
+  {
+    "repository_full_name": "dropwizard",
+    "repository_url": "https://github.com/dropwizard/dropwizard",
+    "domain": "企业信息化",
+    "description": "提供构建和运行 REST 服务的基础能力。",
+    "stars": 8577
+  },
+  {
+    "repository_full_name": "elasticgeo",
+    "repository_url": "https://github.com/ngageoint/elasticgeo",
+    "domain": "智慧城市",
+    "description": "把 Elasticsearch 中的地理数据通过 GeoServer 和 OGC 服务发布出来。",
+    "stars": 172
+  },
+  {
+    "repository_full_name": "eventmesh",
+    "repository_url": "https://github.com/apache/eventmesh",
+    "domain": "企业信息化",
+    "description": "提供事件发布、订阅和分发能力，支撑分布式事件驱动业务。",
+    "stars": 1746
+  },
+  {
+    "repository_full_name": "frankframework",
+    "repository_url": "https://github.com/frankframework/frankframework",
+    "domain": "企业信息化",
+    "description": "通过配置在不同系统间转换、交换和监控业务消息。",
+    "stars": 165
+  },
+  {
+    "repository_full_name": "geoapi",
+    "repository_url": "https://github.com/opengeospatial/geoapi",
+    "domain": "智慧城市",
+    "description": "定义地理信息系统所需的通用空间数据接口和模型。",
+    "stars": 140
+  },
+  {
+    "repository_full_name": "geolatte-geom",
+    "repository_url": "https://github.com/GeoLatte/geolatte-geom",
+    "domain": "智慧城市",
+    "description": "提供符合 OGC 标准的空间几何模型、坐标系和格式转换能力。",
+    "stars": 143
+  },
+  {
+    "repository_full_name": "geometry-api-java",
+    "repository_url": "https://github.com/Esri/geometry-api-java",
+    "domain": "智慧城市",
+    "description": "提供点线面等空间几何处理和空间数据分析能力。",
+    "stars": 709
+  },
+  {
+    "repository_full_name": "georchestra",
+    "repository_url": "https://github.com/georchestra/georchestra",
+    "domain": "智慧城市",
+    "description": "提供地图目录、地图服务、权限管理和空间数据共享的一体化平台。",
+    "stars": 146
+  },
+  {
+    "repository_full_name": "geotools",
+    "repository_url": "https://github.com/geotools/geotools",
+    "domain": "智慧城市",
+    "description": "提供空间数据读写、坐标转换、地图渲染和地理分析能力。",
+    "stars": 1925
+  },
+  {
+    "repository_full_name": "gozer",
+    "repository_url": "https://github.com/walmartlabs/gozer",
+    "domain": "智慧物流",
+    "description": "解析供应链中的 EDI 订单、发货和运输状态等业务单据。",
+    "stars": 76
+  },
+  {
+    "repository_full_name": "graphhopper",
+    "repository_url": "https://github.com/graphhopper/graphhopper",
+    "domain": "智慧物流",
+    "description": "计算道路路线、行驶距离、时间和导航路径。",
+    "stars": 6647
+  },
+  {
+    "repository_full_name": "graylog2-server",
+    "repository_url": "https://github.com/Graylog2/graylog2-server",
+    "domain": "企业信息化",
+    "description": "集中收集、检索、分析和管理系统日志。",
+    "stars": 8115
+  },
+  {
+    "repository_full_name": "halo",
+    "repository_url": "https://github.com/halo-dev/halo",
+    "domain": "企业信息化",
+    "description": "提供博客、知识库、企业网站和在线商城等内容建站能力。",
+    "stars": 39621
+  },
+  {
+    "repository_full_name": "helidon",
+    "repository_url": "https://github.com/helidon-io/helidon",
+    "domain": "企业信息化",
+    "description": "提供构建微服务和网络应用所需的基础运行能力。",
+    "stars": 3813
+  },
+  {
+    "repository_full_name": "hilla",
+    "repository_url": "https://github.com/vaadin/hilla",
+    "domain": "企业信息化",
+    "description": "帮助快速构建带类型安全接口和交互页面的企业业务应用。",
+    "stars": 984
+  },
+  {
+    "repository_full_name": "httpcomponents-client",
+    "repository_url": "https://github.com/apache/httpcomponents-client",
+    "domain": "企业信息化",
+    "description": "提供访问和调用 HTTP 服务的客户端通信能力。",
+    "stars": 1534
+  },
+  {
+    "repository_full_name": "hugegraph",
+    "repository_url": "https://github.com/apache/hugegraph",
+    "domain": "企业信息化",
+    "description": "提供可扩展图数据的存储、查询和关联分析能力。",
+    "stars": 3157
+  },
+  {
+    "repository_full_name": "jackrabbit-oak",
+    "repository_url": "https://github.com/apache/jackrabbit-oak",
+    "domain": "企业信息化",
+    "description": "提供可扩展内容仓库的数据存储和访问能力。",
+    "stars": 412
+  },
+  {
+    "repository_full_name": "jap",
+    "repository_url": "https://github.com/fujieid/jap",
+    "domain": "企业信息化",
+    "description": "提供统一的用户登录、第三方认证和单点登录能力。",
+    "stars": 168
+  },
+  {
+    "repository_full_name": "jmix",
+    "repository_url": "https://github.com/jmix-framework/jmix",
+    "domain": "企业信息化",
+    "description": "提供企业应用的数据建模、权限、审计、报表和流程等通用能力。",
+    "stars": 699
+  },
+  {
+    "repository_full_name": "jpx",
+    "repository_url": "https://github.com/jenetics/jpx",
+    "domain": "智慧城市",
+    "description": "读写和处理 GPS 轨迹文件及其中的路线、轨迹和位置数据。",
+    "stars": 221
+  },
+  {
+    "repository_full_name": "karaf",
+    "repository_url": "https://github.com/apache/karaf",
+    "domain": "企业信息化",
+    "description": "提供企业应用模块部署、配置、日志和运行管理能力。",
+    "stars": 711
+  },
+  {
+    "repository_full_name": "kyuubi",
+    "repository_url": "https://github.com/apache/kyuubi",
+    "domain": "企业信息化",
+    "description": "为数据仓库和数据湖提供多租户 SQL 查询网关。",
+    "stars": 2362
+  },
+  {
+    "repository_full_name": "leshan",
+    "repository_url": "https://github.com/eclipse/leshan",
+    "domain": "智慧城市",
+    "description": "提供物联网设备的注册、连接管理和资源交互能力。",
+    "stars": 689
+  },
+  {
+    "repository_full_name": "mapfish-print",
+    "repository_url": "https://github.com/mapfish/mapfish-print",
+    "domain": "智慧城市",
+    "description": "将地图和地理数据按模板生成可打印的地图报告。",
+    "stars": 197
+  },
+  {
+    "repository_full_name": "metasfresh",
+    "repository_url": "https://github.com/metasfresh/metasfresh",
+    "domain": "企业信息化",
+    "description": "提供采购、销售、库存、财务和制造等企业资源管理能力。",
+    "stars": 2408
+  },
+  {
+    "repository_full_name": "micronaut-core",
+    "repository_url": "https://github.com/micronaut-projects/micronaut-core",
+    "domain": "企业信息化",
+    "description": "提供构建模块化应用和微服务所需的基础能力。",
+    "stars": 6421
+  },
+  {
+    "repository_full_name": "nuxeo",
+    "repository_url": "https://github.com/nuxeo/nuxeo",
+    "domain": "企业信息化",
+    "description": "提供文档、数字资产、知识和业务内容的统一管理能力。",
+    "stars": 708
+  },
+  {
+    "repository_full_name": "ofbiz-framework",
+    "repository_url": "https://github.com/apache/ofbiz-framework",
+    "domain": "企业信息化",
+    "description": "提供覆盖 ERP、CRM、电子商务、供应链和制造的企业流程管理能力。",
+    "stars": 1111
+  },
+  {
+    "repository_full_name": "openig",
+    "repository_url": "https://github.com/OpenIdentityPlatform/OpenIG",
+    "domain": "企业信息化",
+    "description": "作为身份网关统一处理登录、权限和单点访问。",
+    "stars": 92
+  },
+  {
+    "repository_full_name": "openkoda",
+    "repository_url": "https://github.com/openkoda/openkoda",
+    "domain": "企业信息化",
+    "description": "提供用户、权限、多租户、数据管理和报表等企业应用基础能力。",
+    "stars": 1036
+  },
+  {
+    "repository_full_name": "openmrs-core",
+    "repository_url": "https://github.com/openmrs/openmrs-core",
+    "domain": "企业信息化",
+    "description": "提供患者、就诊、病历和医疗业务的管理基础能力。",
+    "stars": 1901
+  },
+  {
+    "repository_full_name": "opentcs",
+    "repository_url": "https://github.com/openTCS/opentcs",
+    "domain": "智慧物流",
+    "description": "管理仓储和工厂中的自动运输设备、任务调度和物料搬运。",
+    "stars": 561
+  },
+  {
+    "repository_full_name": "orientdb",
+    "repository_url": "https://github.com/orientechnologies/orientdb",
+    "domain": "企业信息化",
+    "description": "提供图、文档、全文检索和地理空间数据的一体化数据库管理能力。",
+    "stars": 4983
+  },
+  {
+    "repository_full_name": "paho.mqtt.java",
+    "repository_url": "https://github.com/eclipse/paho.mqtt.java",
+    "domain": "智慧城市",
+    "description": "提供物联网应用的 MQTT 消息连接能力。",
+    "stars": 2294
+  },
+  {
+    "repository_full_name": "pig",
+    "repository_url": "https://github.com/pig-mesh/pig",
+    "domain": "企业信息化",
+    "description": "提供用户权限、认证、网关、监控、代码生成和业务后台管理能力。",
+    "stars": 6677
+  },
+  {
+    "repository_full_name": "planar_algorithm",
+    "repository_url": "https://github.com/huifer/planar_algorithm",
+    "domain": "智慧城市",
+    "description": "提供二维点线面数据的坐标转换、插值、路径和几何分析算法。",
+    "stars": 117
+  },
+  {
+    "repository_full_name": "rebuild",
+    "repository_url": "https://github.com/getrebuild/rebuild",
+    "domain": "企业信息化",
+    "description": "通过可配置的模型、流程和权限快速搭建企业管理系统。",
+    "stars": 1057
+  },
+  {
+    "repository_full_name": "rinsim",
+    "repository_url": "https://github.com/rinde/RinSim",
+    "domain": "智慧物流",
+    "description": "模拟物流取货配送、车辆调度和自动导引车路径规划。",
+    "stars": 114
+  },
+  {
+    "repository_full_name": "ruoyi-vue-pro",
+    "repository_url": "https://github.com/YunaiV/ruoyi-vue-pro",
+    "domain": "企业信息化",
+    "description": "提供用户权限、工作流、商城、支付、报表等企业后台业务能力。",
+    "stars": 39003
+  },
+  {
+    "repository_full_name": "sedona",
+    "repository_url": "https://github.com/apache/sedona",
+    "domain": "智慧城市",
+    "description": "提供大规模地理空间数据的存储、查询和分析能力。",
+    "stars": 2390
+  },
+  {
+    "repository_full_name": "sentinel",
+    "repository_url": "https://github.com/alibaba/sentinel",
+    "domain": "企业信息化",
+    "description": "提供服务限流、熔断、流量控制和系统过载保护。",
+    "stars": 23142
+  },
+  {
+    "repository_full_name": "servicecomb-java-chassis",
+    "repository_url": "https://github.com/apache/servicecomb-java-chassis",
+    "domain": "企业信息化",
+    "description": "提供微服务注册发现、路由和服务治理能力。",
+    "stars": 1940
+  },
+  {
+    "repository_full_name": "shenyu",
+    "repository_url": "https://github.com/apache/shenyu",
+    "domain": "企业信息化",
+    "description": "提供微服务 API 网关、流量治理和协议代理能力。",
+    "stars": 8821
+  },
+  {
+    "repository_full_name": "shiro",
+    "repository_url": "https://github.com/apache/shiro",
+    "domain": "企业信息化",
+    "description": "提供应用登录认证、访问授权、会话管理和加密安全能力。",
+    "stars": 4452
+  },
+  {
+    "repository_full_name": "skywalking",
+    "repository_url": "https://github.com/apache/skywalking",
+    "domain": "企业信息化",
+    "description": "监控分布式系统的调用链、服务拓扑、性能和运行状态。",
+    "stars": 24930
+  },
+  {
+    "repository_full_name": "sldeditor",
+    "repository_url": "https://github.com/sldeditor/sldeditor",
+    "domain": "智慧城市",
+    "description": "编辑和管理地图图层样式及其符号化配置。",
+    "stars": 158
+  },
+  {
+    "repository_full_name": "spatial",
+    "repository_url": "https://github.com/neo4j-contrib/spatial",
+    "domain": "智慧城市",
+    "description": "将地理空间数据导入图数据库并支持空间查询。",
+    "stars": 826
+  },
+  {
+    "repository_full_name": "streampark",
+    "repository_url": "https://github.com/apache/streampark",
+    "domain": "企业信息化",
+    "description": "提供实时流处理应用的开发、部署、运行和运维管理能力。",
+    "stars": 4328
+  },
+  {
+    "repository_full_name": "stylebi",
+    "repository_url": "https://github.com/inetsoft-technology/stylebi",
+    "domain": "企业信息化",
+    "description": "提供数据转换、可视化分析、报表和商业智能展示能力。",
+    "stars": 54
+  },
+  {
+    "repository_full_name": "tinfour",
+    "repository_url": "https://github.com/gwlucastrig/Tinfour",
+    "domain": "智慧城市",
+    "description": "基于三角网对离散地形点进行插值、建模和地表分析。",
+    "stars": 190
+  },
+  {
+    "repository_full_name": "worldwindandroid",
+    "repository_url": "https://github.com/NASAWorldWind/WorldWindAndroid",
+    "domain": "智慧城市",
+    "description": "在移动设备上展示三维地球、地形和地理位置数据。",
+    "stars": 301
+  },
+  {
+    "repository_full_name": "yudao-cloud",
+    "repository_url": "https://github.com/YunaiV/yudao-cloud",
+    "domain": "企业信息化",
+    "description": "提供用户权限、工作流、CRM、ERP、商城和物联网等企业业务模块。",
+    "stars": 19452
+  },
+  {
+    "repository_full_name": "zookeeper",
+    "repository_url": "https://github.com/apache/zookeeper",
+    "domain": "企业信息化",
+    "description": "提供分布式系统的配置管理、命名、同步和协调服务。",
+    "stars": 12795
+  }
+]

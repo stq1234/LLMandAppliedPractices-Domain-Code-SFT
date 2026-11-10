@@ -1,0 +1,129 @@
+{
+  "created": "2026-11-10",
+  "remote_root": "/home/shaotianqi/LowCode",
+  "remote_access": "read-only",
+  "remote_changes": "none",
+  "project_scripts_executed": "none",
+  "source_files": [
+    {
+      "local_path": "scripts/remote/build_samples.sh",
+      "original_path": "/home/shaotianqi/LowCode/build_samples.sh",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/build_skeletons.sh",
+      "original_path": "/home/shaotianqi/LowCode/build_skeletons.sh",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/build_sft_samples.sh",
+      "original_path": "/home/shaotianqi/LowCode/build_sft_samples.sh",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/extract_sft_java_samples.py",
+      "original_path": "/home/shaotianqi/LowCode/extract_sft_java_samples.py",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/task_categories.py",
+      "original_path": "/home/shaotianqi/LowCode/task_categories.py",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/JavaSampleBuilder.java",
+      "original_path": "/home/shaotianqi/LowCode/java-sampler/src/JavaSampleBuilder.java",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/CoverageAnalyzer.java",
+      "original_path": "/home/shaotianqi/LowCode/java-sampler/src/CoverageAnalyzer.java",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/JavaBuildTool.java",
+      "original_path": "/home/shaotianqi/LowCode/java-common/src/JavaBuildTool.java",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/JavaSkeletonExtractor.java",
+      "original_path": "/home/shaotianqi/LowCode/java-skeleton/src/JavaSkeletonExtractor.java",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/build_sft.py",
+      "original_path": "/home/shaotianqi/LowCode/java-sft/build_sft.py",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/README.md",
+      "original_path": "/home/shaotianqi/LowCode/java-skeleton/README.md",
+      "source_host": "a6000",
+      "operation": "read-only scp copy; sampler README separately named below"
+    },
+    {
+      "local_path": "reference/java-sampler-README.md",
+      "original_path": "/home/shaotianqi/LowCode/java-sampler/README.md",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "reference/java-skeleton-README.md",
+      "original_path": "/home/shaotianqi/LowCode/java-skeleton/README.md",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/repository_catalog.json",
+      "original_path": "/home/shaotianqi/LowCode/repository_catalog.json",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/repository_summary.csv",
+      "original_path": "/home/shaotianqi/LowCode/repository_summary.csv",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/remote/运行说明.md",
+      "original_path": "/home/shaotianqi/LowCode/运行说明.md",
+      "source_host": "a6000",
+      "operation": "read-only scp copy"
+    },
+    {
+      "local_path": "scripts/local_redacted/generate_task3_requirements.py",
+      "original_path": "C:\\Users\\-stq-\\Desktop\\didaima\\generate_task3_requirements.py",
+      "source_host": "local Windows workspace",
+      "operation": "copied then sanitized: API key literal replaced by LOWCODE_REQUIREMENTS_API_KEY environment variable; original left unchanged"
+    },
+    {
+      "local_path": "reference/generate_task3_requirements.README.md",
+      "original_path": "C:\\Users\\-stq-\\Desktop\\didaima\\generate_task3_requirements.README.md",
+      "source_host": "local Windows workspace",
+      "operation": "read-only copy"
+    },
+    {
+      "local_path": "reference/task3_requirement_prompt.txt",
+      "original_path": "C:\\Users\\-stq-\\Desktop\\didaima\\prompt.txt",
+      "source_host": "local Windows workspace",
+      "operation": "read-only copy"
+    },
+    {
+      "local_path": "reference/repository_catalog_local.csv",
+      "original_path": "C:\\Users\\-stq-\\Desktop\\didaima\\repository_catalog.csv",
+      "source_host": "local Windows workspace",
+      "operation": "read-only copy"
+    }
+  ]
+}

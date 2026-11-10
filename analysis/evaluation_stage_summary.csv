@@ -1,0 +1,3 @@
+﻿condition,target_samples,candidate_extracted,candidate_extracted_pct,test_task_result_samples,test_task_result_pct,noncached_task_or_summary_samples,stage_without_noncached_evidence_samples,all_commands_success,all_commands_success_pct,extracted_without_test_stage_result,source_extraction_errors,command_records,command_records_with_no_tests_notice,positive_surefire_summaries,gradle_test_task_records,gradle_cached_test_task_records,gradle_up_to_date_test_task_records,gradle_noncached_test_task_records
+base,220,220,100.0,46,20.9,43,3,42,19.1,174,0,933,24,32,203,4,0,199
+sft_offline,220,219,99.5,183,83.2,143,40,169,76.8,36,1,932,24,332,641,221,0,420

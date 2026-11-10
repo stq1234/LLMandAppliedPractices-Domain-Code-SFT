@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="928.8pt" height="719.98875pt" viewBox="0 0 928.8 719.98875" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-10T17:43:17.556758</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 719.98875 
+L 928.8 719.98875 
+L 928.8 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 52.216615 222.88578 
+L 440.484923 222.88578 
+Q 450.332308 222.88578 450.332308 213.554295 
+L 450.332308 122.239047 
+Q 450.332308 112.907562 440.484923 112.907562 
+L 52.216615 112.907562 
+Q 42.369231 112.907562 42.369231 122.239047 
+L 42.369231 213.554295 
+Q 42.369231 222.88578 52.216615 222.88578 
+z
+" clip-path="url(#p525fb62c23)" style="fill: #eaf1f8; stroke: #43566f; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 488.315077 222.88578 
+L 876.583385 222.88578 
+Q 886.430769 222.88578 886.430769 213.554295 
+L 886.430769 122.239047 
+Q 886.430769 112.907562 876.583385 112.907562 
+L 488.315077 112.907562 
+Q 478.467692 112.907562 478.467692 122.239047 
+L 478.467692 213.554295 
+Q 478.467692 222.88578 488.315077 222.88578 
+z
+" clip-path="url(#p525fb62c23)" style="fill: #eaf1f8; stroke: #43566f; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 488.315077 409.515483 
+L 876.583385 409.515483 
+Q 886.430769 409.515483 886.430769 400.183998 
+L 886.430769 308.86875 
+Q 886.430769 299.537265 876.583385 299.537265 
+L 488.315077 299.537265 
+Q 478.467692 299.537265 478.467692 308.86875 
+L 478.467692 400.183998 
+Q 478.467692 409.515483 488.315077 409.515483 
+z
+" clip-path="url(#p525fb62c23)" style="fill: #fceedb; stroke: #43566f; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 52.216615 409.515483 
+L 440.484923 409.515483 
+Q 450.332308 409.515483 450.332308 400.183998 
+L 450.332308 308.86875 
+Q 450.332308 299.537265 440.484923 299.537265 
+L 52.216615 299.537265 
+Q 42.369231 299.537265 42.369231 308.86875 
+L 42.369231 400.183998 
+Q 42.369231 409.515483 52.216615 409.515483 
+z
+" clip-path="url(#p525fb62c23)" style="fill: #eaf4ea; stroke: #43566f; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 52.216615 596.145186 
+L 440.484923 596.145186 
+Q 450.332308 596.145186 450.332308 586.8137 
+L 450.332308 495.498453 
+Q 450.332308 486.166968 440.484923 486.166968 
+L 52.216615 486.166968 
+Q 42.369231 486.166968 42.369231 495.498453 
+L 42.369231 586.8137 
+Q 42.369231 596.145186 52.216615 596.145186 
+z
+" clip-path="url(#p525fb62c23)" style="fill: #f1eaf8; stroke: #43566f; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 488.315077 596.145186 
+L 876.583385 596.145186 
+Q 886.430769 596.145186 886.430769 586.8137 
+L 886.430769 495.498453 
+Q 886.430769 486.166968 876.583385 486.166968 
+L 488.315077 486.166968 
+Q 478.467692 486.166968 478.467692 495.498453 
+L 478.467692 586.8137 
+Q 478.467692 596.145186 488.315077 596.145186 
+z
+" clip-path="url(#p525fb62c23)" style="fill: #f1eaf8; stroke: #43566f; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #243447; font: 700 14px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.350769" y="154.088971" transform="rotate(-0 246.350769 154.088971)">三领域 Java 仓库与测试</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(162.025222 183.091873)">企业信息化 · 智慧物流 · 智慧城市</text>
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(171.600769 198.360998)">定位目标文件并关联相关测试</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #243447; font: 700 14px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="682.449231" y="154.088971" transform="rotate(-0 682.449231 154.088971)">抽象语法树（AST）骨架与依赖抽取</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(613.449231 183.091873)">解析类型、字段和方法签名</text>
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(601.949231 198.360998)">抽取目标骨架与项目内依赖闭包</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #243447; font: 700 14px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="682.449231" y="340.718674" transform="rotate(-0 682.449231 340.718674)">覆盖率候选与训练扩充</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(558.079426 369.721576)">合并相关测试的行覆盖率，按目标类 &gt; 0.50 筛选</text>
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(596.199231 384.990701)">补充训练候选以扩展代码生成样本</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #243447; font: 700 14px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.350769" y="340.718674" transform="rotate(-0 246.350769 340.718674)">基于源码生成中文需求</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(133.067683 369.721576)">GPT 6 Luna 依据完整目标源码提炼真实行为</text>
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(160.100769 384.990701)">结合骨架说明类型结构与依赖边界</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #243447; font: 700 14px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.350769" y="527.348377" transform="rotate(-0 246.350769 527.348377)">构造监督样本对</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(165.850769 556.351279)">输入：中文需求与目标文件骨架</text>
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(185.489715 571.620404)">目标：完整 Java 源文件</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #243447; font: 700 14px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="682.449231" y="527.348377" transform="rotate(-0 682.449231 527.348377)">仓库内划分与功能评测</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(640.180442 556.351279)">训练样本 984 条</text>
+    <text style="fill: #243447; font: 11.5px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif" transform="translate(553.930442 571.620404)">评估样本 220 条（按功能实验最终保留样本统计）</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 450.224636 167.896671 
+Q 464.402683 167.896671 476.903678 167.896671 
+" style="fill: none; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 472.903678 165.896671 
+L 476.903678 167.896671 
+L 472.903678 169.896671 
+z
+" style="fill: #68798d; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 682.449231 222.887977 
+Q 682.449231 260.213803 682.449231 295.862579 
+" style="fill: none; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 684.449231 291.862579 
+L 682.449231 295.862579 
+L 680.449231 291.862579 
+z
+" style="fill: #68798d; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 478.575364 354.526374 
+Q 464.397317 354.526374 451.896322 354.526374 
+" style="fill: none; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 455.896322 356.526374 
+L 451.896322 354.526374 
+L 455.896322 352.526374 
+z
+" style="fill: #68798d; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 246.350769 409.519347 
+Q 246.350769 447.842108 246.350769 484.487818 
+" style="fill: none; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 248.350769 480.487818 
+L 246.350769 484.487818 
+L 244.350769 480.487818 
+z
+" style="fill: #68798d; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 450.224636 541.156077 
+Q 464.402683 541.156077 476.903678 541.156077 
+" style="fill: none; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 472.903678 539.156077 
+L 476.903678 541.156077 
+L 472.903678 543.156077 
+z
+" style="fill: #68798d; stroke: #68798d; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_13">
+    <text style="font: 700 18px 'Microsoft YaHei', 'SimHei', 'DejaVu Sans', sans-serif; text-anchor: middle" x="464.4" y="21.58875" transform="rotate(-0 464.4 21.58875)">Java 文件级 SFT 数据构造流程</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p525fb62c23">
+   <rect x="7.2" y="39.58875" width="914.4" height="673.2"/>
+  </clipPath>
+ </defs>
+</svg>

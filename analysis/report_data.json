@@ -1,0 +1,11 @@
+{
+  "evaluation": [
+    {"domain": "企业信息化", "n": 76, "base_pass": 11, "sft_pass": 54, "base_fail": 65, "sft_fail": 22, "base_error": 0, "sft_error": 0},
+    {"domain": "智慧物流", "n": 102, "base_pass": 25, "sft_pass": 84, "base_fail": 77, "sft_fail": 18, "base_error": 0, "sft_error": 0},
+    {"domain": "智慧城市", "n": 42, "base_pass": 6, "sft_pass": 31, "base_fail": 36, "sft_fail": 10, "base_error": 0, "sft_error": 1}
+  ],
+  "evaluation_total": {"n": 220, "base_pass": 42, "sft_pass": 169, "base_fail": 178, "sft_fail": 50, "base_error": 0, "sft_error": 1},
+  "sft_dataset": {"train": {"java": 984, "python": 838, "total": 1822}, "validation": {"java": 242, "python": 210, "total": 452}},
+  "java_split": {"all": 1226, "train": 984, "validation": 242, "functional_evaluation": 220},
+  "sources": {"evaluation": "analysis/evaluation_notes.md and materials/evaluation", "training": "analysis/training_notes.md and materials/training"}
+}

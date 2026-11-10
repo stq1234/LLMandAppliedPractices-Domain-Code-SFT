@@ -1,0 +1,5 @@
+﻿domain,n,base_pass,sft_pass,base_fail,sft_fail,base_error,sft_error,base_pass_rate,sft_pass_rate,delta_percentage_points
+企业信息化,76,11,54,65,22,0,0,14.47%,71.05%,+56.58
+智慧物流,102,25,84,77,18,0,0,24.51%,82.35%,+57.84
+智慧城市,42,6,31,36,10,0,1,14.29%,73.81%,+59.52
+All domains,220,42,169,178,50,0,1,19.09%,76.82%,+57.73

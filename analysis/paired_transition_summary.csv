@@ -1,0 +1,5 @@
+﻿domain,n,fail_to_pass,pass_to_fail,pass_to_error,pass_to_pass,fail_to_fail,fail_to_error,error_to_pass,error_to_fail,error_to_error
+企业信息化,76,45,2,0,9,20,0,0,0,0
+智慧物流,102,60,1,0,24,17,0,0,0,0
+智慧城市,42,26,0,1,5,10,0,0,0,0
+All domains,220,131,3,1,38,47,0,0,0,0

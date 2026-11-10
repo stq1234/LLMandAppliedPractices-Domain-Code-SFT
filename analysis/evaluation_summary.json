@@ -1,0 +1,610 @@
+{
+  "scope": {
+    "runs": {
+      "base": "20261109-123917-aixcoder-v2",
+      "sft": "20261109-124514-sft-offline"
+    },
+    "reported_task_names": [
+      "snippet",
+      "api",
+      "completion",
+      "generation",
+      "synthesis"
+    ],
+    "task_metrics_rows": 40,
+    "scored_subtask": "synthesis",
+    "paired_samples": 220,
+    "domains": [
+      "企业信息化",
+      "智慧物流",
+      "智慧城市",
+      "All domains"
+    ]
+  },
+  "runs": {
+    "base": {
+      "run_name": "20261109-123917-aixcoder-v2",
+      "report_created_at": "2026-11-09T14:41:45.726289355Z",
+      "report_model_field": "aixcoder-7b-v2",
+      "report_base_url_field": "http://127.0.0.1:8000",
+      "checkpoint": {
+        "updated_at": "2026-11-09T14:41:45.711372127Z",
+        "last_completed_repository": "yudao-cloud",
+        "completed_sample_count": 220
+      },
+      "result_rows": 220,
+      "unique_sample_ids": 220,
+      "statuses": {
+        "failed": 178,
+        "passed": 42
+      },
+      "test_command_rows": 933,
+      "test_command_exit_codes": {
+        "1": 754,
+        "0": 179
+      },
+      "by_subtask_domain": {
+        "difficulty1_lines": {
+          "企业信息化": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          },
+          "智慧物流": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          },
+          "智慧城市": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          }
+        },
+        "difficulty1_api": {
+          "企业信息化": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          },
+          "智慧物流": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          },
+          "智慧城市": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          }
+        },
+        "difficulty2_ast": {
+          "企业信息化": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          },
+          "智慧物流": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          },
+          "智慧城市": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          }
+        },
+        "difficulty2_function_body": {
+          "企业信息化": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          },
+          "智慧物流": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          },
+          "智慧城市": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          }
+        },
+        "difficulty3_files": {
+          "企业信息化": {
+            "total": 76,
+            "passed": 11,
+            "failed": 65,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.14473684210526316,
+            "pass_rate": 0.14473684210526316
+          },
+          "智慧物流": {
+            "total": 102,
+            "passed": 25,
+            "failed": 77,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.24509803921568626,
+            "pass_rate": 0.24509803921568626
+          },
+          "智慧城市": {
+            "total": 42,
+            "passed": 6,
+            "failed": 36,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.14285714285714285,
+            "pass_rate": 0.14285714285714285
+          }
+        }
+      }
+    },
+    "sft": {
+      "run_name": "20261109-124514-sft-offline",
+      "report_created_at": "2026-11-09T14:43:19.691612332Z",
+      "report_model_field": "aixcoder-7b-v2",
+      "report_base_url_field": "http://127.0.0.1:8000",
+      "checkpoint": {
+        "updated_at": "2026-11-09T14:43:19.591152649Z",
+        "last_completed_repository": "yudao-cloud",
+        "completed_sample_count": 220
+      },
+      "result_rows": 220,
+      "unique_sample_ids": 220,
+      "statuses": {
+        "failed": 50,
+        "passed": 169,
+        "error": 1
+      },
+      "test_command_rows": 932,
+      "test_command_exit_codes": {
+        "1": 178,
+        "0": 754
+      },
+      "by_subtask_domain": {
+        "difficulty1_lines": {
+          "企业信息化": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          },
+          "智慧物流": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          },
+          "智慧城市": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          }
+        },
+        "difficulty1_api": {
+          "企业信息化": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          },
+          "智慧物流": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          },
+          "智慧城市": {
+            "total": 0,
+            "character_metrics": {
+              "scored_samples": 0,
+              "total_characters": 0,
+              "matched_characters": 0,
+              "unmatched_characters": 0,
+              "character_accuracy": 0.0
+            }
+          }
+        },
+        "difficulty2_ast": {
+          "企业信息化": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          },
+          "智慧物流": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          },
+          "智慧城市": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          }
+        },
+        "difficulty2_function_body": {
+          "企业信息化": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          },
+          "智慧物流": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          },
+          "智慧城市": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.0,
+            "pass_rate": 0.0
+          }
+        },
+        "difficulty3_files": {
+          "企业信息化": {
+            "total": 76,
+            "passed": 54,
+            "failed": 22,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.7105263157894737,
+            "pass_rate": 0.7105263157894737
+          },
+          "智慧物流": {
+            "total": 102,
+            "passed": 84,
+            "failed": 18,
+            "errors": 0,
+            "pending": 0,
+            "sample_pass_rate": 0.8235294117647058,
+            "pass_rate": 0.8235294117647058
+          },
+          "智慧城市": {
+            "total": 42,
+            "passed": 31,
+            "failed": 10,
+            "errors": 1,
+            "pending": 0,
+            "sample_pass_rate": 0.7380952380952381,
+            "pass_rate": 0.7380952380952381
+          }
+        }
+      }
+    }
+  },
+  "paired": {
+    "same_id_set": true,
+    "sample_metadata_equal_count": 220,
+    "ground_truth_equal_count": 220,
+    "status_transitions": {
+      "failed_to_passed": 131,
+      "passed_to_failed": 3,
+      "passed_to_error": 1,
+      "passed_to_passed": 38,
+      "failed_to_failed": 47,
+      "failed_to_error": 0,
+      "error_to_passed": 0,
+      "error_to_failed": 0,
+      "error_to_error": 0
+    }
+  },
+  "sft_offline_prediction_source": {
+    "remote_path": "/home/shaotianqi/LowCode/sft/predictions.jsonl",
+    "downloaded_path": "D:\\北京大学\\硕士\\大语言模型与应用\\作业5.4_7B领域代码生成SFT实验\\materials\\evaluation\\sources\\sft\\predictions.jsonl",
+    "row_count": 220,
+    "unique_prediction_ids": 220,
+    "model_fields": {
+      "aixcoder-7b-v2-sft-0826": 220
+    },
+    "evaluation_result_fields": {
+      "failed": 50,
+      "passed": 169,
+      "error": 1
+    },
+    "run_completion_rows": 219,
+    "run_completion_exact_raw_output_matches": 219,
+    "prediction_rows_present_for_paired_samples": 220,
+    "exact_ground_truth_full_file_copy_count": 8,
+    "exact_ground_truth_full_file_copy_ids": [
+      "difficulty3_2698384f41c3209d",
+      "difficulty3_513ce2ee2f2670f1",
+      "difficulty3_9adb9f0755fa4fa6",
+      "difficulty3_a66cdd6bc715f7f7",
+      "difficulty3_b1e3bedbf4ec589a",
+      "difficulty3_cae9ecef942749aa",
+      "difficulty3_d9a12d202f68c086",
+      "difficulty3_e60acfa7a217642b"
+    ],
+    "base_exact_ground_truth_full_file_copy_count": 0,
+    "base_exact_ground_truth_full_file_copy_ids": [],
+    "error_sample_ids": [
+      "difficulty3_adf0c54aecaaa590"
+    ],
+    "requested_max_tokens": {
+      "min": 1024,
+      "median": 2076.0,
+      "max": 11286
+    },
+    "structure_token_budget": {
+      "min": 1024,
+      "median": 2076.0,
+      "max": 11286
+    },
+    "prompt_tokens": {
+      "min": 2583,
+      "median": 5914.5,
+      "max": 10890
+    }
+  },
+  "task_metrics_all_domains": [
+    {
+      "run": "20261109-123917-aixcoder-v2",
+      "condition": "base",
+      "task": "snippet",
+      "subtask": "difficulty1_lines",
+      "domain": "All domains",
+      "metric": "CharacterAccuracy",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": 0,
+      "passed": "",
+      "failed": "",
+      "errors": "",
+      "pending": ""
+    },
+    {
+      "run": "20261109-123917-aixcoder-v2",
+      "condition": "base",
+      "task": "api",
+      "subtask": "difficulty1_api",
+      "domain": "All domains",
+      "metric": "CharacterAccuracy",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": 0,
+      "passed": "",
+      "failed": "",
+      "errors": "",
+      "pending": ""
+    },
+    {
+      "run": "20261109-123917-aixcoder-v2",
+      "condition": "base",
+      "task": "completion",
+      "subtask": "difficulty2_ast",
+      "domain": "All domains",
+      "metric": "SamplePassRate",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": "",
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "pending": 0
+    },
+    {
+      "run": "20261109-123917-aixcoder-v2",
+      "condition": "base",
+      "task": "generation",
+      "subtask": "difficulty2_function_body",
+      "domain": "All domains",
+      "metric": "SamplePassRate",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": "",
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "pending": 0
+    },
+    {
+      "run": "20261109-123917-aixcoder-v2",
+      "condition": "base",
+      "task": "synthesis",
+      "subtask": "difficulty3_files",
+      "domain": "All domains",
+      "metric": "SamplePassRate",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": "",
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "pending": 0
+    },
+    {
+      "run": "20261109-124514-sft-offline",
+      "condition": "sft",
+      "task": "snippet",
+      "subtask": "difficulty1_lines",
+      "domain": "All domains",
+      "metric": "CharacterAccuracy",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": 0,
+      "passed": "",
+      "failed": "",
+      "errors": "",
+      "pending": ""
+    },
+    {
+      "run": "20261109-124514-sft-offline",
+      "condition": "sft",
+      "task": "api",
+      "subtask": "difficulty1_api",
+      "domain": "All domains",
+      "metric": "CharacterAccuracy",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": 0,
+      "passed": "",
+      "failed": "",
+      "errors": "",
+      "pending": ""
+    },
+    {
+      "run": "20261109-124514-sft-offline",
+      "condition": "sft",
+      "task": "completion",
+      "subtask": "difficulty2_ast",
+      "domain": "All domains",
+      "metric": "SamplePassRate",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": "",
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "pending": 0
+    },
+    {
+      "run": "20261109-124514-sft-offline",
+      "condition": "sft",
+      "task": "generation",
+      "subtask": "difficulty2_function_body",
+      "domain": "All domains",
+      "metric": "SamplePassRate",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": "",
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "pending": 0
+    },
+    {
+      "run": "20261109-124514-sft-offline",
+      "condition": "sft",
+      "task": "synthesis",
+      "subtask": "difficulty3_files",
+      "domain": "All domains",
+      "metric": "SamplePassRate",
+      "value": "",
+      "numerator": 0,
+      "denominator": 0,
+      "scored_samples": "",
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "pending": 0
+    }
+  ],
+  "interpretation_limits": [
+    "Only synthesis has nonzero evaluation rows; snippet, api, completion, and generation are N/A or empty in these runs.",
+    "The primary file-level pass rate uses all 220 assigned samples; an error is a non-pass and remains in the denominator.",
+    "The SFT predictions are offline records whose model field is aixcoder-7b-v2-sft-0826; this does not identify v4 checkpoint weights.",
+    "The evaluator report model/base_url fields are not sufficient to identify the offline predictions' model or prove a live call.",
+    "The SFT inference prompt itself is not stored in predictions.jsonl; exact prompt equality with the base run is unverified."
+  ]
+}

@@ -1,0 +1,21 @@
+﻿domain,n_paired_samples,paired_outcome,count
+企业信息化,76,repaired_fail_to_pass,45
+企业信息化,76,residual_fail_to_fail,20
+企业信息化,76,new_failure_pass_to_fail,2
+企业信息化,76,new_error_pass_to_error,0
+企业信息化,76,stable_pass,9
+智慧物流,102,repaired_fail_to_pass,60
+智慧物流,102,residual_fail_to_fail,17
+智慧物流,102,new_failure_pass_to_fail,1
+智慧物流,102,new_error_pass_to_error,0
+智慧物流,102,stable_pass,24
+智慧城市,42,repaired_fail_to_pass,26
+智慧城市,42,residual_fail_to_fail,10
+智慧城市,42,new_failure_pass_to_fail,0
+智慧城市,42,new_error_pass_to_error,1
+智慧城市,42,stable_pass,5
+All domains,220,repaired_fail_to_pass,131
+All domains,220,residual_fail_to_fail,47
+All domains,220,new_failure_pass_to_fail,3
+All domains,220,new_error_pass_to_error,1
+All domains,220,stable_pass,38

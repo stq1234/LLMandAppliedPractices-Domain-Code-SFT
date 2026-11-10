@@ -1,0 +1,123 @@
+{
+  "id": "difficulty3_32c0a2af7ec1083b",
+  "case_type": "pass_to_fail_behavior_regression",
+  "domain": "企业信息化",
+  "repo": "curator",
+  "repo_tag": "apache/curator",
+  "target_path": "curator-recipes/src/main/java/org/apache/curator/framework/recipes/barriers/DistributedBarrier.java",
+  "base_status": "passed",
+  "sft_status": "failed",
+  "sft_prediction_model": "aixcoder-7b-v2-sft-0826",
+  "ground_truth": "/*\n * Licensed to the Apache Software Foundation (ASF) under one\n * or more contributor license agreements.  See the NOTICE file\n * distributed with this work for additional information\n * regarding copyright ownership.  The ASF licenses this file\n * to you under the Apache License, Version 2.0 (the\n * \"License\"); you may not use this file except in compliance\n * with the License.  You may obtain a copy of the License at\n *\n *   http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the License is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n * KIND, either express or implied.  See the License for the\n * specific language governing permissions and limitations\n * under the License.\n */\n\npackage org.apache.curator.framework.recipes.barriers;\n\nimport java.util.concurrent.TimeUnit;\nimport org.apache.curator.framework.CuratorFramework;\nimport org.apache.curator.utils.PathUtils;\nimport org.apache.zookeeper.KeeperException;\nimport org.apache.zookeeper.WatchedEvent;\nimport org.apache.zookeeper.Watcher;\n\n/**\n * <p>\n *     A barrier as described in the ZK recipes. Quoting the recipe:\n * </p>\n *\n * <blockquote>\n *     Distributed systems use barriers to block processing of a set of nodes\n *     until a condition is met at which time all the nodes are allowed to proceed\n * </blockquote>\n */\npublic class DistributedBarrier {\n    private final CuratorFramework client;\n    private final String barrierPath;\n    private final Watcher watcher = new Watcher() {\n        @Override\n        public void process(WatchedEvent event) {\n            client.postSafeNotify(DistributedBarrier.this);\n        }\n    };\n\n    /**\n     * @param client client\n     * @param barrierPath path to use as the barrier\n     */\n    public DistributedBarrier(CuratorFramework client, String barrierPath) {\n        this.client = client;\n        this.barrierPath = PathUtils.validatePath(barrierPath);\n    }\n\n    /**\n     * Utility to set the barrier node\n     *\n     * @throws Exception errors\n     */\n    public synchronized void setBarrier() throws Exception {\n        try {\n            client.create().creatingParentContainersIfNeeded().forPath(barrierPath);\n        } catch (KeeperException.NodeExistsException ignore) {\n            // ignore\n        }\n    }\n\n    /**\n     * Utility to remove the barrier node\n     *\n     * @throws Exception errors\n     */\n    public synchronized void removeBarrier() throws Exception {\n        try {\n            client.delete().forPath(barrierPath);\n        } catch (KeeperException.NoNodeException ignore) {\n            // ignore\n        }\n    }\n\n    /**\n     * Blocks until the barrier node comes into existence\n     *\n     * @throws Exception errors\n     */\n    public synchronized void waitOnBarrier() throws Exception {\n        waitOnBarrier(-1, null);\n    }\n\n    /**\n     * Blocks until the barrier no longer exists or the timeout elapses\n     *\n     * @param maxWait max time to block\n     * @param unit time unit\n     * @return true if the wait was successful, false if the timeout elapsed first\n     * @throws Exception errors\n     */\n    public synchronized boolean waitOnBarrier(long maxWait, TimeUnit unit) throws Exception {\n        long startMs = System.currentTimeMillis();\n        boolean hasMaxWait = (unit != null);\n        long maxWaitMs = hasMaxWait ? TimeUnit.MILLISECONDS.convert(maxWait, unit) : Long.MAX_VALUE;\n\n        boolean result;\n        for (; ; ) {\n            result = (client.checkExists().usingWatcher(watcher).forPath(barrierPath) == null);\n            if (result) {\n                break;\n            }\n\n            if (hasMaxWait) {\n                long elapsed = System.currentTimeMillis() - startMs;\n                long thisWaitMs = maxWaitMs - elapsed;\n                if (thisWaitMs <= 0) {\n                    break;\n                }\n                wait(thisWaitMs);\n            } else {\n                wait();\n            }\n        }\n        return result;\n    }\n}\n",
+  "base_model_output": "package org.apache.curator.framework.recipes.barriers;\n\nimport java.util.concurrent.TimeUnit;\nimport org.apache.curator.framework.CuratorFramework;\nimport org.apache.curator.utils.PathUtils;\nimport org.apache.zookeeper.KeeperException;\nimport org.apache.zookeeper.WatchedEvent;\nimport org.apache.zookeeper.Watcher;\n\npublic class DistributedBarrier {\n  private final CuratorFramework client;\n  private final String barrierPath;\n  private final Watcher watcher = new Watcher() {\n    public void process(WatchedEvent event) {\n      client.postSafeNotify(DistributedBarrier.this);\n    }\n  };\n  public DistributedBarrier(CuratorFramework client, String barrierPath) {\n    this.client = client;\n    this.barrierPath = PathUtils.validatePath(barrierPath);\n  }\n  public synchronized void setBarrier() throws Exception {\n    client.create().creatingParentContainersIfNeeded().forPath(barrierPath);\n  }\n  public synchronized void removeBarrier() throws Exception {\n    client.delete().forPath(barrierPath);\n  }\n  public synchronized void waitOnBarrier() throws Exception {\n    waitOnBarrier(-1, null);\n  }\n  public synchronized boolean waitOnBarrier(long maxWait, TimeUnit unit) throws Exception {\n    long startMs = System.currentTimeMillis();\n    while (client.checkExists().usingWatcher(watcher).forPath(barrierPath) != null) {\n      if ((unit != null) && (System.currentTimeMillis() - startMs >= TimeUnit.MILLISECONDS.convert(maxWait, unit))) {\n        return false;\n      }\n      wait(unit != null ? Math.min(TimeUnit.MILLISECONDS.convert(maxWait, unit) - (System.currentTimeMillis() - startMs), TimeUnit.MILLISECONDS.convert(1, TimeUnit.MILLISECONDS)) : 0);\n    }\n    return true;\n  }\n}\n",
+  "sft_model_output": "package org.apache.curator.framework.recipes.barriers;\n\nimport java.util.concurrent.TimeUnit;\nimport org.apache.curator.framework.CuratorFramework;\nimport org.apache.curator.utils.PathUtils;\nimport org.apache.zookeeper.KeeperException;\nimport org.apache.zookeeper.WatchedEvent;\nimport org.apache.zookeeper.Watcher;\n\n/**\n * Distributed barrier. All processes/threads that want to wait on the barrier\n * must call {@link #waitOnBarrier()} until {@link #removeBarrier()} is called.\n */\npublic class DistributedBarrier {\n    private final CuratorFramework client;\n    private final String barrierPath;\n    private final Watcher watcher = new Watcher() {\n        @Override\n        public void process(WatchedEvent event) {\n            client.postSafeNotify(DistributedBarrier.this);\n        }\n    };\n\n    /**\n     * @param client the client\n     * @param barrierPath the barrier path\n     */\n    public DistributedBarrier(CuratorFramework client, String barrierPath) {\n        this.client = client;\n        this.barrierPath = PathUtils.validatePath(barrierPath);\n    }\n\n    /**\n     * Set the barrier\n     *\n     * @throws Exception errors\n     */\n    public synchronized void setBarrier() throws Exception {\n        try {\n            client.create()\n                    .creatingParentContainersIfNeeded()\n                    .forPath(barrierPath);\n        } catch (KeeperException.NodeExistsException e) {\n            // ignore\n        }\n    }\n\n    /**\n     * Remove the barrier\n     *\n     * @throws Exception errors\n     */\n    public synchronized void removeBarrier() throws Exception {\n        try {\n            client.delete().forPath(barrierPath);\n        } catch (KeeperException.NoNodeException e) {\n            // ignore\n        }\n    }\n\n    /**\n     * Wait on the barrier\n     *\n     * @throws Exception errors\n     */\n    public synchronized void waitOnBarrier() throws Exception {\n        waitOnBarrier(-1, null);\n    }\n\n    /**\n     * Wait on the barrier\n     *\n     * @param maxWait max wait\n     * @param unit max wait unit\n     * @return true if barrier was removed, false if timed out\n     * @throws Exception errors\n     */\n    public synchronized boolean waitOnBarrier(long maxWait, TimeUnit unit) throws Exception {\n        long start = System.currentTimeMillis();\n        boolean hasMaxWait = unit != null;\n        while (client.checkExists().usingWatcher(watcher).forPath(barrierPath) != null) {\n            if (hasMaxWait) {\n                long thisWaitMs = unit.convert(maxWait, TimeUnit.MILLISECONDS) - (System.currentTimeMillis() - start);\n                if (thisWaitMs <= 0) {\n                    return false;\n                }\n                wait(thisWaitMs);\n            } else {\n                wait();\n            }\n        }\n        return true;\n    }\n}\n",
+  "sft_prediction_raw_output": "/*\n * Licensed to the Apache Software Foundation (ASF) under one\n * or more contributor license agreements.  See the NOTICE file\n * distributed with this work for additional information\n * regarding copyright ownership.  The ASF licenses this file\n * to you under the Apache License, Version 2.0 (the\n * \"License\"); you may not use this file except in compliance\n * with the License.  You may obtain a copy of the License at\n *\n *   http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the License is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n * KIND, either express or implied.  See the License for the\n * specific language governing permissions and limitations\n * under the License.\n */\n\npackage org.apache.curator.framework.recipes.barriers;\n\nimport java.util.concurrent.TimeUnit;\nimport org.apache.curator.framework.CuratorFramework;\nimport org.apache.curator.utils.PathUtils;\nimport org.apache.zookeeper.KeeperException;\nimport org.apache.zookeeper.WatchedEvent;\nimport org.apache.zookeeper.Watcher;\n\n/**\n * Distributed barrier. All processes/threads that want to wait on the barrier\n * must call {@link #waitOnBarrier()} until {@link #removeBarrier()} is called.\n */\npublic class DistributedBarrier {\n    private final CuratorFramework client;\n    private final String barrierPath;\n    private final Watcher watcher = new Watcher() {\n        @Override\n        public void process(WatchedEvent event) {\n            client.postSafeNotify(DistributedBarrier.this);\n        }\n    };\n\n    /**\n     * @param client the client\n     * @param barrierPath the barrier path\n     */\n    public DistributedBarrier(CuratorFramework client, String barrierPath) {\n        this.client = client;\n        this.barrierPath = PathUtils.validatePath(barrierPath);\n    }\n\n    /**\n     * Set the barrier\n     *\n     * @throws Exception errors\n     */\n    public synchronized void setBarrier() throws Exception {\n        try {\n            client.create()\n                    .creatingParentContainersIfNeeded()\n                    .forPath(barrierPath);\n        } catch (KeeperException.NodeExistsException e) {\n            // ignore\n        }\n    }\n\n    /**\n     * Remove the barrier\n     *\n     * @throws Exception errors\n     */\n    public synchronized void removeBarrier() throws Exception {\n        try {\n            client.delete().forPath(barrierPath);\n        } catch (KeeperException.NoNodeException e) {\n            // ignore\n        }\n    }\n\n    /**\n     * Wait on the barrier\n     *\n     * @throws Exception errors\n     */\n    public synchronized void waitOnBarrier() throws Exception {\n        waitOnBarrier(-1, null);\n    }\n\n    /**\n     * Wait on the barrier\n     *\n     * @param maxWait max wait\n     * @param unit max wait unit\n     * @return true if barrier was removed, false if timed out\n     * @throws Exception errors\n     */\n    public synchronized boolean waitOnBarrier(long maxWait, TimeUnit unit) throws Exception {\n        long start = System.currentTimeMillis();\n        boolean hasMaxWait = unit != null;\n        while (client.checkExists().usingWatcher(watcher).forPath(barrierPath) != null) {\n            if (hasMaxWait) {\n                long thisWaitMs = unit.convert(maxWait, TimeUnit.MILLISECONDS) - (System.currentTimeMillis() - start);\n                if (thisWaitMs <= 0) {\n                    return false;\n                }\n                wait(thisWaitMs);\n            } else {\n                wait();\n            }\n        }\n        return true;\n    }\n}",
+  "base_error": "",
+  "sft_error": "",
+  "base_test_evidence": [
+    {
+      "command": "bash ./mvnw -pl curator-recipes -am test -Dtest=org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testBasic -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoTests=false -Dcheckstyle.skip=true -Dformatter.skip=true",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_seconds": 20.09,
+      "excerpt_lines": [
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.757 s - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0",
+        "[INFO] BUILD SUCCESS"
+      ]
+    },
+    {
+      "command": "bash ./mvnw -pl curator-recipes -am test -Dtest=org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testMultiClient -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoTests=false -Dcheckstyle.skip=true -Dformatter.skip=true",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_seconds": 17.062,
+      "excerpt_lines": [
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.06 s - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0",
+        "[INFO] BUILD SUCCESS"
+      ]
+    },
+    {
+      "command": "bash ./mvnw -pl curator-recipes -am test -Dtest=org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testNoBarrier -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoTests=false -Dcheckstyle.skip=true -Dformatter.skip=true",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_seconds": 15.383,
+      "excerpt_lines": [
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.633 s - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0",
+        "[INFO] BUILD SUCCESS"
+      ]
+    },
+    {
+      "command": "bash ./mvnw -pl curator-recipes -am test -Dtest=org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testServerCrash -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoTests=false -Dcheckstyle.skip=true -Dformatter.skip=true",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_seconds": 21.73,
+      "excerpt_lines": [
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.088 s - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0",
+        "[INFO] BUILD SUCCESS"
+      ]
+    }
+  ],
+  "sft_test_evidence": [
+    {
+      "command": "bash ./mvnw -pl curator-recipes -am test -Dtest=org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testBasic -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoTests=false -Dcheckstyle.skip=true -Dformatter.skip=true",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_seconds": 22.958,
+      "excerpt_lines": [
+        "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.109 s <<< FAILURE! - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+        "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.235 s <<< FAILURE! - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+        "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.143 s <<< FAILURE! - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "org.opentest4j.AssertionFailedError: expected: <true> but was: <false>",
+        "[ERROR]   Run 1: TestDistributedBarrier.testBasic:175 expected: <true> but was: <false>",
+        "[ERROR]   Run 2: TestDistributedBarrier.testBasic:175 expected: <true> but was: <false>",
+        "[ERROR]   Run 3: TestDistributedBarrier.testBasic:175 expected: <true> but was: <false>",
+        "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0",
+        "[INFO] BUILD FAILURE"
+      ]
+    },
+    {
+      "command": "bash ./mvnw -pl curator-recipes -am test -Dtest=org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testMultiClient -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoTests=false -Dcheckstyle.skip=true -Dformatter.skip=true",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_seconds": 18.154,
+      "excerpt_lines": [
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.472 s - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0",
+        "[INFO] BUILD SUCCESS"
+      ]
+    },
+    {
+      "command": "bash ./mvnw -pl curator-recipes -am test -Dtest=org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testNoBarrier -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoTests=false -Dcheckstyle.skip=true -Dformatter.skip=true",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_seconds": 18.86,
+      "excerpt_lines": [
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.771 s - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0",
+        "[INFO] BUILD SUCCESS"
+      ]
+    },
+    {
+      "command": "bash ./mvnw -pl curator-recipes -am test -Dtest=org.apache.curator.framework.recipes.barriers.TestDistributedBarrier#testServerCrash -Dsurefire.failIfNoSpecifiedTests=false -DfailIfNoTests=false -Dcheckstyle.skip=true -Dformatter.skip=true",
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_seconds": 27.551,
+      "excerpt_lines": [
+        "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.778 s <<< FAILURE! - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "org.opentest4j.AssertionFailedError:",
+        "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.894 s <<< FAILURE! - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "org.opentest4j.AssertionFailedError:",
+        "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.884 s <<< FAILURE! - in org.apache.curator.framework.recipes.barriers.TestDistributedBarrier",
+        "org.opentest4j.AssertionFailedError:",
+        "[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0",
+        "[INFO] BUILD FAILURE"
+      ]
+    }
+  ],
+  "sample_expected_test_commands": 4
+}

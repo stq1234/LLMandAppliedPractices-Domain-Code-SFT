@@ -1,0 +1,279 @@
+{
+  "scope": {
+    "base_run": "20261109-123917-aixcoder-v2",
+    "sft_offline_run": "20261109-124514-sft-offline",
+    "paired_samples": 220,
+    "stage_unit": "sample-level; a test-stage result requires at least one captured Gradle :test task result (including FROM-CACHE or UP-TO-DATE) or a positive test summary",
+    "noncached_evidence_unit": "sample-level; at least one Gradle :test task result without FROM-CACHE or UP-TO-DATE, or a positive Surefire summary; positive Core test summaries do not by themselves imply a noncached execution",
+    "official_success_unit": "sample-level; report status passed and every deduplicated associated command returned exit code 0 without timeout"
+  },
+  "report_status_counts": {
+    "base": {
+      "failed": 178,
+      "passed": 42
+    },
+    "sft_offline": {
+      "failed": 50,
+      "passed": 169,
+      "error": 1
+    }
+  },
+  "stage_summary": {
+    "base": {
+      "condition": "base",
+      "target_samples": 220,
+      "candidate_extracted": 220,
+      "candidate_extracted_pct": 100.0,
+      "test_task_result_samples": 46,
+      "test_task_result_pct": 20.9,
+      "noncached_task_or_summary_samples": 43,
+      "stage_without_noncached_evidence_samples": 3,
+      "all_commands_success": 42,
+      "all_commands_success_pct": 19.1,
+      "extracted_without_test_stage_result": 174,
+      "source_extraction_errors": 0,
+      "command_records": 933,
+      "command_records_with_no_tests_notice": 24,
+      "positive_surefire_summaries": 32,
+      "gradle_test_task_records": 203,
+      "gradle_cached_test_task_records": 4,
+      "gradle_up_to_date_test_task_records": 0,
+      "gradle_noncached_test_task_records": 199
+    },
+    "sft_offline": {
+      "condition": "sft_offline",
+      "target_samples": 220,
+      "candidate_extracted": 219,
+      "candidate_extracted_pct": 99.5,
+      "test_task_result_samples": 183,
+      "test_task_result_pct": 83.2,
+      "noncached_task_or_summary_samples": 143,
+      "stage_without_noncached_evidence_samples": 40,
+      "all_commands_success": 169,
+      "all_commands_success_pct": 76.8,
+      "extracted_without_test_stage_result": 36,
+      "source_extraction_errors": 1,
+      "command_records": 932,
+      "command_records_with_no_tests_notice": 24,
+      "positive_surefire_summaries": 332,
+      "gradle_test_task_records": 641,
+      "gradle_cached_test_task_records": 221,
+      "gradle_up_to_date_test_task_records": 0,
+      "gradle_noncached_test_task_records": 420
+    }
+  },
+  "paired_stage_transitions": {
+    "base_no_stage_to_sft_stage": 141,
+    "base_stage_to_sft_no_stage": 4,
+    "both_stage": 42,
+    "neither_stage": 33
+  },
+  "command_output_diagnostics": {
+    "base": {
+      "command_records": 933,
+      "command_records_with_no_tests_notice": 24,
+      "positive_surefire_summaries": 32,
+      "gradle_test_task_records": 203,
+      "gradle_cached_test_task_records": 4,
+      "gradle_up_to_date_test_task_records": 0,
+      "gradle_noncached_test_task_records": 199
+    },
+    "sft_offline": {
+      "command_records": 932,
+      "command_records_with_no_tests_notice": 24,
+      "positive_surefire_summaries": 332,
+      "gradle_test_task_records": 641,
+      "gradle_cached_test_task_records": 221,
+      "gradle_up_to_date_test_task_records": 0,
+      "gradle_noncached_test_task_records": 420
+    }
+  },
+  "source_length_mapping": {
+    "evaluation_samples": 220,
+    "unique_source_records": 1226,
+    "v4_java_test_matches": 220,
+    "source_line_definition": "v4_sample_index.source_lines = len(source_text.split('\\n')); includes blank/comment lines and a trailing empty segment when the source ends with LF",
+    "lower_tertile_nearest_rank": 71,
+    "upper_tertile_nearest_rank": 134,
+    "min_source_lines": 19,
+    "median_source_lines_nearest_rank": 98,
+    "max_source_lines": 384,
+    "source_hash_join": "evaluation_sample_index.source_sha256 = sft_source_index.source_sha256 = v4_sample_index.source_sha256_exact"
+  },
+  "source_length_group_summary": [
+    {
+      "length_group": "short",
+      "observed_source_lines": "19-71",
+      "n_samples": 75,
+      "base_pass_count": 23,
+      "base_pass_rate_pct": 30.7,
+      "sft_pass_count": 67,
+      "sft_pass_rate_pct": 89.3,
+      "delta_pp": 58.7,
+      "fail_to_pass": 45,
+      "fail_to_fail": 7,
+      "pass_to_fail": 1,
+      "pass_to_error": 0,
+      "pass_to_pass": 22,
+      "domain_mix": "企业信息化:12; 智慧城市:17; 智慧物流:46",
+      "repository_mix": "curator:3; eventmesh:9; geoapi:1; leshan:5; mapfish-print:11; opentcs:46"
+    },
+    {
+      "length_group": "medium",
+      "observed_source_lines": "72-134",
+      "n_samples": 72,
+      "base_pass_count": 15,
+      "base_pass_rate_pct": 20.8,
+      "sft_pass_count": 61,
+      "sft_pass_rate_pct": 84.7,
+      "delta_pp": 63.9,
+      "fail_to_pass": 49,
+      "fail_to_fail": 8,
+      "pass_to_fail": 2,
+      "pass_to_error": 1,
+      "pass_to_pass": 12,
+      "domain_mix": "企业信息化:33; 智慧城市:11; 智慧物流:28",
+      "repository_mix": "curator:6; eventmesh:14; geoapi:1; httpcomponents-client:12; leshan:3; mapfish-print:7; opentcs:28; yudao-cloud:1"
+    },
+    {
+      "length_group": "long",
+      "observed_source_lines": "138-384",
+      "n_samples": 73,
+      "base_pass_count": 4,
+      "base_pass_rate_pct": 5.5,
+      "sft_pass_count": 41,
+      "sft_pass_rate_pct": 56.2,
+      "delta_pp": 50.7,
+      "fail_to_pass": 37,
+      "fail_to_fail": 32,
+      "pass_to_fail": 0,
+      "pass_to_error": 0,
+      "pass_to_pass": 4,
+      "domain_mix": "企业信息化:31; 智慧城市:14; 智慧物流:28",
+      "repository_mix": "curator:7; eventmesh:6; geoapi:1; httpcomponents-client:15; leshan:2; mapfish-print:10; opentcs:28; tinfour:1; yudao-cloud:3"
+    }
+  ],
+  "repository_rates": [
+    {
+      "aggregation": "repository",
+      "repo": "curator",
+      "n_repositories": 1,
+      "n_files": 16,
+      "base_pass_count": 2,
+      "base_pass_rate_pct": 12.5,
+      "sft_pass_count": 10,
+      "sft_pass_rate_pct": 62.5,
+      "delta_pp": 50.0
+    },
+    {
+      "aggregation": "repository",
+      "repo": "eventmesh",
+      "n_repositories": 1,
+      "n_files": 29,
+      "base_pass_count": 4,
+      "base_pass_rate_pct": 13.79,
+      "sft_pass_count": 25,
+      "sft_pass_rate_pct": 86.21,
+      "delta_pp": 72.41
+    },
+    {
+      "aggregation": "repository",
+      "repo": "geoapi",
+      "n_repositories": 1,
+      "n_files": 3,
+      "base_pass_count": 0,
+      "base_pass_rate_pct": 0.0,
+      "sft_pass_count": 1,
+      "sft_pass_rate_pct": 33.33,
+      "delta_pp": 33.33
+    },
+    {
+      "aggregation": "repository",
+      "repo": "httpcomponents-client",
+      "n_repositories": 1,
+      "n_files": 27,
+      "base_pass_count": 5,
+      "base_pass_rate_pct": 18.52,
+      "sft_pass_count": 18,
+      "sft_pass_rate_pct": 66.67,
+      "delta_pp": 48.15
+    },
+    {
+      "aggregation": "repository",
+      "repo": "leshan",
+      "n_repositories": 1,
+      "n_files": 10,
+      "base_pass_count": 1,
+      "base_pass_rate_pct": 10.0,
+      "sft_pass_count": 9,
+      "sft_pass_rate_pct": 90.0,
+      "delta_pp": 80.0
+    },
+    {
+      "aggregation": "repository",
+      "repo": "mapfish-print",
+      "n_repositories": 1,
+      "n_files": 28,
+      "base_pass_count": 5,
+      "base_pass_rate_pct": 17.86,
+      "sft_pass_count": 21,
+      "sft_pass_rate_pct": 75.0,
+      "delta_pp": 57.14
+    },
+    {
+      "aggregation": "repository",
+      "repo": "opentcs",
+      "n_repositories": 1,
+      "n_files": 102,
+      "base_pass_count": 25,
+      "base_pass_rate_pct": 24.51,
+      "sft_pass_count": 84,
+      "sft_pass_rate_pct": 82.35,
+      "delta_pp": 57.84
+    },
+    {
+      "aggregation": "repository",
+      "repo": "tinfour",
+      "n_repositories": 1,
+      "n_files": 1,
+      "base_pass_count": 0,
+      "base_pass_rate_pct": 0.0,
+      "sft_pass_count": 0,
+      "sft_pass_rate_pct": 0.0,
+      "delta_pp": 0.0
+    },
+    {
+      "aggregation": "repository",
+      "repo": "yudao-cloud",
+      "n_repositories": 1,
+      "n_files": 4,
+      "base_pass_count": 0,
+      "base_pass_rate_pct": 0.0,
+      "sft_pass_count": 1,
+      "sft_pass_rate_pct": 25.0,
+      "delta_pp": 25.0
+    }
+  ],
+  "aggregation_comparison": {
+    "n_repositories": 9,
+    "file_micro": {
+      "base_rate_pct": 19.09,
+      "sft_rate_pct": 76.82,
+      "delta_pp": 57.73
+    },
+    "repository_macro": {
+      "base_rate_pct": 10.8,
+      "sft_rate_pct": 57.9,
+      "delta_pp": 47.1
+    }
+  },
+  "selected_business_case": {
+    "id": "difficulty3_9a34df9fd4ed74fa",
+    "repo": "opentcs",
+    "class": "PeripheralAttachmentManager"
+  },
+  "test_stage_interpretation": {
+    "noncached_evidence": "A Gradle :test task with no FROM-CACHE or UP-TO-DATE marker, or a positive Surefire summary; this is an output-record classification, not a count of JUnit methods or assertions.",
+    "zero_test_guard": "A command-record count or a first-failure category is not sufficient evidence. Positive Surefire counts, Gradle test-task outcomes, or test-run summaries are required."
+  }
+}
